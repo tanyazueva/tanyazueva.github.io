@@ -16,7 +16,7 @@ CASES = [
     ("redesign", "Полный редизайн", "bazar"),
     ("design-system", "Новая дизайн-система", "bazar"),
     ("redpolitika", "Редполитика", "bazar"),
-    ("ai", "ИИ в команде", "bazar"),
+    ("ai", "ИИ в&nbsp;команде", "bazar"),
     ("sandyq", "Sandyq Prime", "other"),
     ("daladev", "DalaDev Core", "other"),
     ("chayla", "Chayla App", "other"),
@@ -103,7 +103,7 @@ def footer(current: str, prefix: str) -> str:
     <ul class="contacts__list">
       <li><a class="contact" href="https://t.me/worldofsea" target="_blank" rel="noopener" data-goatcounter-click="contact-telegram"><span class="contact__icon">{ICON_TG}</span><span><span class="contact__label">Telegram</span><span class="contact__value">@worldofsea</span></span></a></li>
       <li><a class="contact" href="mailto:tzueva.work@gmail.com" data-goatcounter-click="contact-email"><span class="contact__icon">{ICON_MAIL}</span><span><span class="contact__label">Почта</span><span class="contact__value">tzueva.work@gmail.com</span></span></a></li>
-      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon">{ICON_PHONE}</span><span><span class="contact__label">Телефон</span><span class="contact__value">+7 (905) 117-39-76</span></span></a></li>
+      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon">{ICON_PHONE}</span><span><span class="contact__label">Телефон</span><span class="contact__value">+7&nbsp;(905)&nbsp;117-39-76</span></span></a></li>
     </ul>
     <p class="contacts__copy">Таня Зуева · 2026</p>
   </div>
