@@ -123,20 +123,9 @@
 .video-trigger img { width: 100%; max-width: none; }
 .video-trigger:hover .sticker, .video-trigger:focus-visible .sticker { transform: scale(1.1); }
 .collage__video { left: 340px; top: 135px; width: 226px; }
-.is-modal-open { overflow: hidden; }
-.video-modal {
-  padding: 0; border: 0; background: transparent; color: var(--ink);
-  width: min(1100px, calc(100vw - 48px)); max-width: none; max-height: none; overflow: visible;
-}
-.video-modal::backdrop { background: rgba(8, 8, 10, .82); backdrop-filter: blur(6px); }
-.video-modal__box { position: relative; }
-.video-modal__video { display: block; width: 100%; height: auto; max-height: calc(100vh - 120px); border-radius: var(--r-l); background: #000; }
-.video-modal__close {
-  position: absolute; top: -52px; right: 0; width: 40px; height: 40px; border-radius: 50%;
-  display: grid; place-items: center; background: var(--card-raised); color: var(--ink); transition: background .2s;
-}
-.video-modal__close:hover { background: #313136; }
-.video-modal__close svg { width: 20px; height: 20px; }
+/* окно видео: общий вид окна и крестика — в site.css (.modal, .modal__close) */
+.video-modal { width: min(1100px, calc(100vw - 168px)); }
+.video-modal__video { display: block; width: 100%; height: auto; max-height: calc(100vh - 80px); border-radius: var(--r-l); background: #000; }
 @media (max-width: 760px) {
   .collage__video { left: 196px; top: 108px; width: 161px; }
   .video-modal { width: calc(100vw - 24px); }

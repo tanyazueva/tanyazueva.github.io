@@ -6,6 +6,7 @@
 """
 from pathlib import Path
 import re
+import hashlib
 
 ROOT = Path(__file__).parent
 SRC = ROOT / "src"
@@ -52,7 +53,7 @@ def head(title: str, description: str, path: str, prefix: str, image: str = "ass
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{prefix}assets/css/tokens.css">
-<link rel="stylesheet" href="{prefix}assets/css/site.css">"""
+<link rel="stylesheet" href="{prefix}assets/css/site.css">""" + (f'\n<script src="{prefix}assets/js/lightbox.js" defer></script>' if path.startswith("cases/") else "")
 
 
 def header(prefix: str) -> str:
@@ -125,6 +126,14 @@ def build() -> None:
         html = html.replace("<!--HEADER-->", header(prefix))
         html = re.sub(r"<!--FOOTER (\S+)-->", lambda m: footer(m.group(1), prefix), html)
         html = html.replace("{{P}}", prefix)
+        # метка версии для CSS/JS, чтобы после обновления браузер не брал старый файл из кэша
+        def _ver(m):
+            f = ROOT / ("assets/" + m.group(3))
+            if not f.exists():
+                return m.group(0)
+            v = hashlib.md5(f.read_bytes()).hexdigest()[:8]
+            return f'{m.group(1)}="{m.group(2)}assets/{m.group(3)}?v={v}"'
+        html = re.sub(r'(href|src)="((?:\.\./)*)assets/((?:css|js)/[^"?]+)"', _ver, html)
         out = ROOT / rel
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(html, encoding="utf-8")
