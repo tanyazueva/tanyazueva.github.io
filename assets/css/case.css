@@ -1,5 +1,5 @@
 /* Страница кейса: общий шаблон для всех кейсов */
-.case-top { display: flex; flex-direction: column; gap: 16px; padding-bottom: 40px; }
+.case-top { display: flex; flex-direction: column; gap: 16px; padding-top: 16px; padding-bottom: 40px; }
 .back { align-self: flex-start; font: 400 15px/22px var(--sans); color: var(--muted); transition: color .2s; }
 .back:hover { color: var(--ink); }
 
@@ -91,7 +91,7 @@
 }
 
 @media (max-width: 760px) {
-  .case-top { padding-bottom: 16px; gap: 10px; }
+  .case-top { padding-top: 12px; padding-bottom: 16px; gap: 10px; }
   .cover { border-radius: var(--r-l); }
   .case { gap: 16px; padding-top: 16px; padding-bottom: 40px; }
   .sections { gap: 16px; }
