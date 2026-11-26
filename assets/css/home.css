@@ -111,3 +111,11 @@
   .project { zoom: .66; }
   .project__index { zoom: 1.4; top: 78px; }
 }
+
+/* Подвал главной: без линии над контактами, отступы как в макете (48 + 32) */
+.home .footer { padding-top: 48px; }
+.home .contacts { border-top: 0; padding-top: 32px; }
+@media (max-width: 760px) {
+  .home .footer { padding-top: 40px; }
+  .home .contacts { padding-top: 0; }
+}
