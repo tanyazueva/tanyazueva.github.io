@@ -46,3 +46,8 @@ a.cs-pill:hover { border-color: var(--ink-soft); }
   .card.cs-row { gap: 24px; }
   .cs-bullets li, .cs-panel p, .cs-outro > p { font: 400 15px/22px var(--sans); }
 }
+
+/* Плитка-ссылка на статью Forbes */
+.tile--link { padding: 0; transition: background .2s; }
+.tile--link a { display: flex; flex-direction: column; gap: 4px; padding: 16px; height: 100%; }
+.tile--link:hover { background: #313136; }
