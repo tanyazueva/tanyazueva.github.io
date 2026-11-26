@@ -17,7 +17,9 @@
     </div>
     <div class="collage" aria-label="Обо мне">
       <img class="sticker collage__item collage__photo" src="assets/img/photo.png" width="250" height="279" alt="Фото Тани с подписью «Привет, я Таня»">
-      <img class="sticker collage__item collage__video" src="assets/img/video.png" width="227" height="226" alt="Кружок-видео">
+      <button class="collage__item collage__video video-trigger" type="button" aria-haspopup="dialog" aria-controls="about-video" data-goatcounter-click="video-open">
+        <img class="sticker" src="assets/img/video.png" width="226" height="226" alt="Видео: 80 секунд обо мне">
+      </button>
       <img class="sticker collage__item collage__ux" src="assets/img/ux.png" width="218" height="116" alt="UX-writing">
       <img class="sticker collage__item collage__years" src="assets/img/years.png" width="363" height="127" alt="5 лет в продуктовом дизайне">
       <img class="sticker collage__item collage__ds4" src="assets/img/ds4.png" width="336" height="119" alt="4 дизайн-системы с нуля">
@@ -105,6 +107,18 @@
     </div>
   </section>
 </main>
+
+<dialog class="video-modal" id="about-video" aria-label="Видео: 80 секунд обо мне">
+  <div class="video-modal__box">
+    <button class="video-modal__close" type="button" aria-label="Закрыть видео">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <video class="video-modal__video" controls playsinline preload="none" poster="assets/video/about-poster.webp" width="1920" height="1080">
+      <source src="assets/video/about.mp4" type="video/mp4">
+    </video>
+  </div>
+</dialog>
+<script src="assets/js/video-modal.js" defer></script>
 
 <div class="wrap wrap--wide">
 <!--FOOTER home-->

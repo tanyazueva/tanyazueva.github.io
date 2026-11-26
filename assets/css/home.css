@@ -10,7 +10,6 @@
 .collage { position: relative; width: 754px; height: 325px; flex: none; }
 .collage__item { position: absolute; max-width: none; }
 .collage__photo  { left: 165px; top: 48px;  width: 250px; }
-.collage__video  { left: 340px; top: 134px; width: 227px; }
 .collage__ux     { left: 24px;  top: 186px; width: 218px; }
 .collage__years  { left: 47px;  top: -3px;  width: 363px; }
 .collage__ds4    { left: 388px; top: 7px;   width: 336px; }
@@ -89,7 +88,6 @@
 
   .collage { width: 350px; height: 400px; align-self: center; }
   .collage__photo  { left: 30px;  top: 62px;  width: 196px; }
-  .collage__video  { left: 196px; top: 108px; width: 161px; }
   .collage__ux     { left: 4px;   top: 240px; width: 119px; }
   .collage__years  { left: 46px;  top: 0;     width: 240px; }
   .collage__ds4    { left: 122px; top: 282px; width: 185px; }
@@ -118,4 +116,29 @@
 @media (max-width: 760px) {
   .home .footer { padding-top: 40px; }
   .home .contacts { padding-top: 0; }
+}
+
+/* Видео «80 секунд обо мне» */
+.video-trigger { padding: 0; border: 0; background: none; cursor: pointer; border-radius: 50%; }
+.video-trigger img { width: 100%; max-width: none; }
+.video-trigger:hover .sticker, .video-trigger:focus-visible .sticker { transform: scale(1.1); }
+.collage__video { left: 340px; top: 135px; width: 226px; }
+.is-modal-open { overflow: hidden; }
+.video-modal {
+  padding: 0; border: 0; background: transparent; color: var(--ink);
+  width: min(1100px, calc(100vw - 48px)); max-width: none; max-height: none; overflow: visible;
+}
+.video-modal::backdrop { background: rgba(8, 8, 10, .82); backdrop-filter: blur(6px); }
+.video-modal__box { position: relative; }
+.video-modal__video { display: block; width: 100%; height: auto; max-height: calc(100vh - 120px); border-radius: var(--r-l); background: #000; }
+.video-modal__close {
+  position: absolute; top: -52px; right: 0; width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--card-raised); color: var(--ink); transition: background .2s;
+}
+.video-modal__close:hover { background: #313136; }
+.video-modal__close svg { width: 20px; height: 20px; }
+@media (max-width: 760px) {
+  .collage__video { left: 196px; top: 108px; width: 161px; }
+  .video-modal { width: calc(100vw - 24px); }
+  .video-modal__video { border-radius: var(--r-m); }
 }
