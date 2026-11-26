@@ -1,0 +1,80 @@
+/* Токены из Figma: коллекция «Портфолио F тёмная» (fd/*) и стили текста FD/* */
+:root {
+  --bg: #0f0f11;
+  --ink: #f3efe7;
+  --ink-soft: rgba(243, 239, 231, 0.8);
+  --muted: #8e8a82;
+  --line: #2a2a2d;
+  --line-strong: rgba(243, 239, 231, 0.2);
+  --card: #1c1c1f;
+  --card-raised: #26262a;
+  --accent: #6e9cf7;
+  --claude: #d97757;
+  --sticker-lime: #bfff00;
+  --sticker-paper: #f4f1ea;
+  --sticker-ink: #0e0e0e;
+
+  --r-xxs: 2px;
+  --r-s: 8px;
+  --r-sm: 12px;
+  --r-m: 16px;
+  --r-ml: 20px;
+  --r-l: 24px;
+  --r-2xl: 32px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Lora", Georgia, serif;
+  --mono: "Roboto Mono", ui-monospace, monospace;
+
+  --content: 1200px;
+}
+
+/* Стили текста FD/* */
+.t-h1 { font: 600 48px/58px var(--sans); letter-spacing: -0.01em; }
+.t-h2 { font: 600 32px/40px var(--sans); letter-spacing: -0.01em; }
+.t-h3 { font: 600 24px/32px var(--sans); }
+.t-h4 { font: 600 20px/28px var(--sans); }
+.t-heading { font: 600 20px/26px var(--sans); }
+.t-number { font: 600 44px/52px var(--sans); letter-spacing: -0.02em; }
+.t-text-l { font: 400 18px/26px var(--sans); }
+.t-text-l-m { font: 500 18px/24px var(--sans); }
+.t-text { font: 400 16px/24px var(--sans); }
+.t-body-m { font: 500 16px/22px var(--sans); }
+.t-text-s { font: 400 15px/22px var(--sans); }
+.t-text-s-m { font: 500 15px/22px var(--sans); }
+.t-text-s-sb { font: 600 15px/22px var(--sans); }
+.t-small { font: 400 14px/20px var(--sans); }
+.t-small-m { font: 500 14px/20px var(--sans); }
+.t-caption-s { font: 400 13px/18px var(--sans); }
+.t-label { font: 500 13px/18px var(--sans); }
+.t-micro { font: 500 11px/14px var(--sans); }
+.t-hero { font: 400 58px/68px var(--serif); }
+.t-display-i { font: italic 400 56px/62px var(--serif); }
+.t-subtitle-i { font: italic 400 32px/40px var(--serif); }
+.t-italic-m { font: italic 400 20px/26px var(--serif); }
+.t-quote { font: italic 400 22px/30px var(--serif); }
+.t-note { font: italic 400 15px/17px var(--serif); }
+.t-code { font: 400 13px/21px var(--mono); }
+
+.c-ink { color: var(--ink); }
+.c-soft { color: var(--ink-soft); }
+.c-muted { color: var(--muted); }
+.c-accent { color: var(--accent); }
+
+@media (max-width: 760px) {
+  .t-h1 { font: 600 32px/38px var(--sans); }
+  .t-h2 { font: 600 24px/30px var(--sans); letter-spacing: -0.02em; }
+  .t-h3 { font: 600 24px/32px var(--sans); }
+  .t-number { font: 600 32px/38px var(--sans); }
+  .t-text-l { font: 400 16px/24px var(--sans); }
+  .t-text-l-m { font: 500 16px/22px var(--sans); }
+  .t-text { font: 400 15px/22px var(--sans); }
+  .t-body-m { font: 500 15px/22px var(--sans); }
+  .t-hero { font: 400 38px/44px var(--serif); }
+  .t-subtitle-i { font: italic 400 28px/32px var(--serif); }
+  .t-quote { font: italic 400 18px/26px var(--serif); }
+  .t-italic-m { font: italic 400 17px/22px var(--serif); }
+  .t-note { font: italic 400 13px/15px var(--serif); }
+}

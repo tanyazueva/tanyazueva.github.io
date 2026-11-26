@@ -1,0 +1,35 @@
+/* Кейс Taza: только то, чего нет в case.css */
+
+/* Вводная: «О проекте» и «Задача» — две плашки в ряд */
+.taza-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.taza-box { background: var(--card-raised); border-radius: var(--r-l); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.taza-box__title { font: 500 18px/24px var(--sans); }
+.taza-box p, .taza-bullets li { font: 400 16px/24px var(--sans); color: var(--ink-soft); }
+.taza-bullets { display: flex; flex-direction: column; gap: 8px; }
+.taza-bullets li { display: flex; gap: 12px; }
+.taza-bullets li::before { content: "•"; flex: none; width: 11px; color: var(--accent); }
+
+/* Функции платформы */
+.taza-label { font: 500 18px/24px var(--sans); }
+.taza-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; align-items: start; }
+.taza-grid li { background: var(--card-raised); border-radius: var(--r-m); padding: 16px; font: 500 16px/22px var(--sans); }
+
+/* Дизайн-библиотека */
+.taza-link { align-self: flex-start; font: 500 16px/22px var(--sans); color: var(--accent); transition: opacity .2s; }
+.taza-link:hover { opacity: .75; }
+.taza-quote { margin: 0; border-left: 2px solid var(--accent); padding-left: 20px; font: italic 400 22px/30px var(--serif); }
+
+@media (max-width: 1100px) {
+  .taza-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .taza-row, .taza-grid { grid-template-columns: 1fr; }
+  .taza-row { gap: 12px; }
+  .taza-box { padding: 20px; }
+  .taza-box p, .taza-bullets li { font: 400 15px/22px var(--sans); }
+  .taza-label { font: 500 16px/22px var(--sans); }
+  .taza-grid { gap: 8px; }
+  .taza-grid li { font: 500 15px/22px var(--sans); }
+  .taza-quote { font: italic 400 18px/26px var(--serif); padding-left: 16px; }
+}

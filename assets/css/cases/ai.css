@@ -1,0 +1,36 @@
+/* Кейс «ИИ в команде»: только то, чего нет в case.css */
+
+/* В разделах этого кейса между шапкой раздела и доводами 24px (а не 32) */
+.case--ai .sections .card:not(.card--row) { gap: 24px; }
+
+/* Иконки в «Где помогает ИИ»: подложка fd/line, иконка 24px */
+.ai-ico { display: flex; align-items: center; justify-content: center; background: var(--line); color: var(--ink); }
+.ai-ico svg { width: 24px; height: 24px; }
+.case--ai .done { grid-auto-rows: minmax(66px, auto); }
+
+/* Раздел «Графика»: текст слева, превью картинки справа */
+.ai-col { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.ai-preview { margin: 0; flex: none; width: 308px; align-self: flex-start; border: 1px solid var(--line); border-radius: var(--r-l); overflow: hidden; }
+.ai-preview > img { width: 100%; }
+.ai-preview__body { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.ai-preview__refs { display: flex; gap: 8px; }
+.ai-preview__refs img { width: 48px; height: 48px; border-radius: var(--r-sm); }
+.ai-preview__model { font: 500 16px/22px var(--sans); }
+.ai-preview__prompt { font: 400 14px/20px var(--sans); color: var(--muted); }
+
+/* «Что пошло не так»: сетка 2×2, последняя плашка — по центру */
+.ai-args-2 { grid-template-columns: repeat(2, 1fr); }
+.ai-args-2 .arg:last-child { justify-content: center; }
+
+/* Результаты: три плитки в ряд */
+.ai-tiles-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 1100px) {
+  .ai-tiles-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .case--ai .done { grid-auto-rows: auto; }
+  .ai-args-2, .ai-tiles-3 { grid-template-columns: 1fr; }
+  .ai-preview { width: 100%; max-width: 308px; }
+}

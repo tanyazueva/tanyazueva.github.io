@@ -1,0 +1,117 @@
+/* Страница кейса: общий шаблон для всех кейсов */
+.case-top { display: flex; flex-direction: column; gap: 16px; padding-bottom: 40px; }
+.back { align-self: flex-start; font: 400 15px/22px var(--sans); color: var(--muted); transition: color .2s; }
+.back:hover { color: var(--ink); }
+
+.cover { border-radius: var(--r-xl); overflow: hidden; background: var(--card); }
+.cover img { width: 100%; height: auto; }
+.cover-stack { display: flex; flex-direction: column; gap: 24px; }
+
+.case { display: flex; flex-direction: column; gap: 80px; padding-top: 80px; padding-bottom: 80px; }
+.sections { display: flex; flex-direction: column; gap: 20px; }
+
+/* Карточка: Вводная и разделы */
+.card { background: var(--card); border-radius: var(--r-xl); padding: 40px; display: flex; flex-direction: column; gap: 32px; }
+.card--row { flex-direction: row; gap: 40px; }
+.intro { gap: 40px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border-radius: var(--r-pill); background: var(--card-raised); border: 1px solid var(--line); font: 400 13px/18px var(--sans); }
+
+.title-block { display: flex; flex-direction: column; gap: 8px; }
+.title-block .sub { color: var(--ink-soft); font: 400 18px/26px var(--sans); }
+
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.fact { border: 1px solid var(--line); border-radius: var(--r-ml); padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+.fact__label { font: 400 14px/20px var(--sans); color: var(--muted); }
+.fact__value { font: 500 18px/24px var(--sans); }
+
+.block { display: flex; flex-direction: column; gap: 12px; }
+.block p { color: var(--ink-soft); font: 400 18px/26px var(--sans); }
+.block--list { gap: 24px; }
+
+.done { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.done__item { display: flex; gap: 16px; align-items: flex-start; }
+.done__icon { width: 48px; height: 48px; border-radius: var(--r-m); flex: none; }
+.done__item h4 { font: 500 16px/22px var(--sans); }
+.done__item p { font: 400 14px/20px var(--sans); color: var(--muted); margin-top: 4px; }
+
+/* Заголовок раздела */
+.section__head { display: flex; flex-direction: column; gap: 24px; }
+.eyebrow { font: 500 14px/20px var(--sans); }
+.section__head .title-block p { color: var(--ink-soft); font: 400 18px/26px var(--sans); }
+
+/* Доводы */
+.args { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.args--col { display: flex; flex-direction: column; gap: 12px; }
+.arg { border: 1px solid var(--line); border-radius: var(--r-ml); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.args--col .arg { flex: 1; justify-content: center; }
+.arg h4 { font: 500 16px/22px var(--sans); }
+.arg p { font: 400 14px/20px var(--sans); color: var(--muted); }
+
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: stretch; }
+.split--wide-gap { gap: 32px; }
+
+/* Таблица «Было / Стало» */
+.ba { border: 1px solid var(--line); border-radius: var(--r-l); padding: 24px; }
+.ba table { width: 100%; border-collapse: collapse; }
+.ba th { font: 400 15px/21px var(--sans); color: var(--muted); text-align: right; padding: 0 0 8px 16px; }
+.ba th:first-child { text-align: left; padding-left: 0; }
+.ba td { padding: 12px 0 12px 16px; border-top: 1px solid var(--line); text-align: right; font: 400 17px/26px var(--sans); color: var(--muted); }
+.ba td:first-child { text-align: left; padding-left: 0; }
+.ba td:last-child { font: 600 20px/26px var(--sans); color: var(--ink); width: 64px; }
+.ba th:last-child { width: 64px; }
+
+/* Этапы */
+.steps { border: 1px solid var(--line); border-radius: var(--r-l); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.step { border: 1px solid var(--line); border-radius: var(--r-m); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.step h4 { font: 500 16px/22px var(--sans); }
+.step p { font: 400 15px/21px var(--sans); color: var(--muted); }
+.step-arrow { width: 20px; height: 20px; align-self: center; transform: rotate(90deg); }
+
+/* Визуалы-картинки */
+.visual { border-radius: var(--r-l); width: 100%; }
+.visual-col { display: flex; flex-direction: column; gap: 12px; }
+.icons-row { display: grid; grid-template-columns: 508fr 588fr; gap: 24px; align-items: stretch; }
+.icons-row img { width: 100%; }
+
+/* Плитки цифр */
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.tile { background: var(--card-raised); border-radius: var(--r-l); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.tile__num { font: 600 44px/52px var(--sans); letter-spacing: -0.02em; }
+.tile p { font: 400 16px/24px var(--sans); color: var(--ink-soft); }
+
+/* Плашка-дисклеймер */
+.note { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: var(--r-ml); padding: 16px 20px; color: var(--ink-soft); }
+.note svg { width: 20px; height: 20px; flex: none; color: var(--ink); }
+
+@media (max-width: 1100px) {
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .split, .icons-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .case-top { padding-bottom: 16px; gap: 10px; }
+  .cover { border-radius: var(--r-l); }
+  .case { gap: 16px; padding-top: 16px; padding-bottom: 40px; }
+  .sections { gap: 16px; }
+  .wrap--case { padding-left: 0; padding-right: 0; }
+  .card { border-radius: var(--r-l); padding: 20px; gap: 24px; }
+  .card--row { flex-direction: column; }
+  .intro { gap: 24px; }
+  .facts { grid-template-columns: 1fr; }
+  .fact__value { font: 500 16px/22px var(--sans); }
+  .title-block .sub, .section__head .title-block p, .block p { font: 400 15px/22px var(--sans); }
+  .section__head .title-block h2 { font: 600 24px/32px var(--sans); letter-spacing: 0; }
+  .block h3 { font: 600 20px/28px var(--sans); }
+  .done { grid-template-columns: 1fr; gap: 20px; }
+  .done__item h4, .arg h4, .step h4 { font: 500 15px/22px var(--sans); }
+  .args { grid-template-columns: 1fr; }
+  .ba { padding: 16px; }
+  .ba td { font: 400 15px/22px var(--sans); }
+  .ba td:last-child { font: 600 17px/22px var(--sans); }
+  .steps { padding: 16px; }
+  .tiles { gap: 8px; }
+  .tile__num { font: 600 32px/38px var(--sans); }
+  .tile p { font: 400 15px/22px var(--sans); }
+}

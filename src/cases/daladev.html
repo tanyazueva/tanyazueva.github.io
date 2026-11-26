@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<!--HEAD Дизайн-система ядра DalaDev — Таня Зуева|Как мы создали Daladev Core Design System, чтобы ускорить работу дизайнеров и разработчиков и обеспечить единообразие в интерфейсах всех продуктов.|cases/daladev.html-->
+<link rel="stylesheet" href="{{P}}assets/css/case.css">
+<link rel="stylesheet" href="{{P}}assets/css/cases/daladev.css">
+</head>
+<body>
+<div class="wrap">
+<!--HEADER-->
+  <div class="case-top">
+    <a class="back" href="{{P}}index.html#projects">← Все проекты</a>
+  </div>
+  <div class="cover">
+    <img src="{{P}}assets/img/daladev/cover.webp" width="1200" height="600" alt="Обложка кейса: логотип DalaDev Core Design System">
+  </div>
+</div>
+
+<main class="wrap wrap--case case">
+  <section class="card intro">
+    <ul class="tags"><li class="tag">Design System</li><li class="tag">Design tokens</li><li class="tag">Product design</li></ul>
+    <div class="title-block">
+      <h1 class="t-h1">Дизайн-система ядра DalaDev</h1>
+      <p class="sub">Как мы создали Daladev Core Design System, чтобы ускорить работу дизайнеров и разработчиков и обеспечить единообразие в интерфейсах всех продуктов.</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt class="fact__label">Роль</dt><dd class="fact__value">Дизайн-часть дизайн-системы</dd></div>
+      <div class="fact"><dt class="fact__label">Тип</dt><dd class="fact__value">Design System, токены</dd></div>
+      <div class="fact"><dt class="fact__label">Инструменты</dt><dd class="fact__value">Figma</dd></div>
+    </dl>
+    <div class="row2">
+      <div class="box">
+        <h3>Почему возникла необходимость?</h3>
+        <p>Мы в DalaDev стояли перед выбором:</p>
+        <ul class="bullets">
+          <li>Использовать готовую дизайн-систему.</li>
+          <li>Разработать собственную, заточенную под наши задачи.</li>
+        </ul>
+        <p>Анализ готовых решений показал, что ни одно из них не покрывает наши потребности. Поэтому было принято решение создать Daladev Core Design System — универсальную мультибрендовую систему для ускорения работы дизайнеров и разработчиков.</p>
+      </div>
+      <div class="box">
+        <h3>Проблемы, которые мы решали</h3>
+        <ul class="bullets">
+          <li>Дублирование работы — типовые элементы создавались заново для каждого проекта.</li>
+          <li>Отсутствие стандартов — шрифты, стили, размеры требовали постоянной калибровки.</li>
+          <li>Неоптимальная структура файлов — компоненты были плохо организованы.</li>
+          <li>Несогласованный дизайн веб- и мобильных версий — веб-интерфейсы были слабо адаптированы.</li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="t-text-l-m">Цели разработки</h2>
+    <div class="minis minis--3">
+      <div class="mini"><h4>Единый UI-кит</h4><p>Создать единый UI-кит на основе дизайн-токенов.</p></div>
+      <div class="mini"><h4>Гибкие компоненты</h4><p>Разработать гибкую систему компонентов для всех продуктов.</p></div>
+      <div class="mini"><h4>Обучение</h4><p>Обучить команду работе с токенами.</p></div>
+      <div class="mini"><h4>Внедрение</h4><p>Внедрить систему в процессы разработки.</p></div>
+      <div class="mini"><h4>Развитие</h4><p>Поддерживать и развивать систему.</p></div>
+    </div>
+    <div class="figures">
+      <h2 class="t-h3">Результат</h2>
+      <ul class="tiles">
+        <li class="tile"><span class="tile__num">58</span><p>компонентов на дизайн-токенах</p></li>
+        <li class="tile"><span class="tile__num">2</span><p>режима в Variables: мобильный и десктопный</p></li>
+        <li class="tile"><span class="tile__num">90%</span><p>времени экономит на типовых задачах</p></li>
+        <li class="tile"><span class="tile__num">4 px</span><p>шаг сетки — перешли на 4-пиксельную</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="sections">
+    <section class="card">
+      <p class="eyebrow">01</p>
+      <h2 class="t-h2">Продукты, использующие DalaDev Core</h2>
+      <img class="pic" src="{{P}}assets/img/daladev/products.webp" width="1120" height="211" alt="Логотипы продуктов: Sandyq Prime, QR PAY, Chayla Group, Pana, Taza, Minmin" loading="lazy">
+      <ul class="bullets">
+        <li>Sandyq Prime – программа лояльности и QR-меню для ресторанов сети Sandyq Group.</li>
+        <li>QR PAY – платежи, чаевые, планшеты самовывоза.</li>
+        <li>Chayla Group – программа лояльности и QR-меню для ресторанов сети Chayla Group.</li>
+        <li>Pana – бронирование жилья и впечатлений.</li>
+        <li>Taza – B2B-закупки.</li>
+        <li>Minmin – объявления.</li>
+        <li>Naprocat – аренда (проект закрыт).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">02</p>
+        <h2 class="t-h2">Исследование</h2>
+        <div class="row2 lib-row" style="grid-template-columns: 636fr 460fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>Мы изучили открытые дизайн-системы:</h3>
+              <ul class="bullets">
+                <li>Атомаро (Avito)</li>
+                <li>Material Design</li>
+                <li>Atlassian</li>
+                <li>Ant Design</li>
+              </ul>
+              <p>Много статей было прочитано про работу дизайн-системы Dodo IS от Dodo, OZI от OZON, Encore от Spotify, Lightning от Salesforce, Carbon от IBM, Base от Uber, Polaris от Shopify и Microsoft Fluent.</p>
+            </div>
+            <div class="box">
+              <h3>Критерии анализа:</h3>
+              <ul class="bullets">
+                <li>Семантика токенов — как они называют свои токены и почему.</li>
+                <li>Структура токенов — вложенности и сложность групп токенов.</li>
+                <li>Размерная сетка — на какие юниты они расщепляют цифровые данные, как соотносятся с собой размерные сетки в разных категориях.</li>
+                <li>Есть ли базовая единица измерения, с которой происходят вычисления, или размеры вводятся вручную.</li>
+                <li>Токены для мобильных и десктопа - используют ли Modes в переменных или создают отдельный файл</li>
+              </ul>
+            </div>
+          </div>
+          <img class="shot" src="{{P}}assets/img/daladev/research.webp" width="460" height="620" alt="Рукописные заметки со сравнением токенов и размерных сеток разных дизайн-систем" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">03</p>
+        <h2 class="t-h2">Разработка дизайн-части</h2>
+        <div class="row2 lib-row" style="grid-template-columns: 636fr 460fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>Ключевые шаги</h3>
+              <ul class="bullets">
+                <li>Аудит и компонентирование существующих элементов.</li>
+                <li>Создание библиотеки компонентов с вариантами и состояниями.</li>
+                <li>Разработка дизайн-токенов (цвета, размеры, типографика).</li>
+                <li>Документация и гайды по системе.</li>
+                <li>Презентация для команды — обучение использованию системы.</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Дополнительно</h3>
+              <p>Для ускорения работы:</p>
+              <ul class="bullets">
+                <li>Внедрили шрифтовые иконки ion icons.</li>
+                <li>Собрали универсальный набор нейтральных картинок для модалок и пустых состояний, который можно использовать во всех продуктах</li>
+                <li>Унифицировали тексты интерфейса (убрали бренды, стандартизировали тон).</li>
+                <li>Оптимизировали и стандартизировали размеры и соотношения сторон картинок, которые используются в приложениях.</li>
+                <li>Перешли на 4-пиксельную сетку.</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="panel">
+            <img src="{{P}}assets/img/daladev/slides.webp" width="396" height="285" alt="Слайды презентации о дизайн-системе для команды" loading="lazy">
+            <figcaption class="panel__cap">Слайды презентации, которую мы провели для команды (имеет устаревшие с тех пор данные)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">04</p>
+        <div class="title-block">
+          <h2 class="t-h2">Внедрение в код</h2>
+          <p class="sub">Разработчики создали конвертер JSON → Flutter. Я тестировала методы передачи, проводила дизайн-ревью и помогала внедрению.</p>
+        </div>
+        <div class="row2 lib-row" style="grid-template-columns: 496fr 600fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>Гибкость компонентов</h3>
+              <p>Большинство компонентов (где это применимо) настроены так, чтобы их можно было использовать и в мобильных, и в десктопных экранах. Это реализовано через Modes в Variables, где мы создали два режима — мобильный и десктопный.</p>
+            </div>
+            <div class="box">
+              <h3>Результат</h3>
+              <ul class="bullets">
+                <li>58 компонентов на дизайн-токенах.</li>
+                <li>Универсальная адаптация для мобильных и десктопа.</li>
+                <li>Введение режимов (Modes) в Variables для гибкости масштабирования.</li>
+                <li>Упрощение работы разработчиков — сборка интерфейсов как конструктора.</li>
+              </ul>
+            </div>
+          </div>
+          <img class="shot" src="{{P}}assets/img/daladev/code.webp" width="600" height="480" alt="Один и тот же интерфейс Pana на компонентах ядра в мобильном и десктопном режиме" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">05</p>
+      <h2 class="t-h2">Использование в продуктах</h2>
+      <p class="text">Новая система ускорила работу над проектами Sandyq Prime, QR PAY, Chayla Group.</p>
+      <ul class="bullets">
+        <li>Pana использует систему для новых экранов.</li>
+        <li>Taza и Minmin стали первыми тестовыми продуктами.</li>
+      </ul>
+      <div class="box"><p>Сейчас разработчики и дизайнеры не создают интерфейсы с нуля, а используют готовые компоненты. Это экономит 90% времени на типовые задачи.</p></div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">06</p>
+      <h2 class="t-h2">Выводы</h2>
+      <ul class="bullets">
+        <li>Daladev Core сократил время разработки.</li>
+        <li>Дизайн стал единообразным во всех продуктах.</li>
+        <li>Файл библиотеки остается актуальным и поддерживается.</li>
+        <li>Внедрение дизайн-системы дало команде гибкость и предсказуемость.</li>
+      </ul>
+      <blockquote class="quote t-quote">«Дизайн-систему нельзя создать, ее можно только делать.» Виктор Теплов (OZON)</blockquote>
+      <p class="text">Я продолжаю изучать новые подходы, читаю Чат про дизайн-системы в Telegram, слежу за обновлениями Figma и конференциями.</p>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+<!--FOOTER daladev-->
+</div>
+</body>
+</html>

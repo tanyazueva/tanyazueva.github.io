@@ -1,0 +1,113 @@
+/* Главная */
+.home main { display: flex; flex-direction: column; gap: 48px; padding-top: 48px; }
+
+/* Hero */
+.hero { display: flex; align-items: center; justify-content: space-between; min-height: 405px; padding-top: 40px; padding-bottom: 40px; gap: 29px; }
+.hero__text { display: flex; flex-direction: column; gap: 16px; max-width: 529px; flex: none; }
+.hero__title { font: 400 58px/68px var(--serif); }
+.hero__title em { font: italic 400 56px/62px var(--serif); }
+
+.collage { position: relative; width: 754px; height: 325px; flex: none; }
+.collage__item { position: absolute; max-width: none; }
+.collage__photo  { left: 165px; top: 48px;  width: 250px; }
+.collage__video  { left: 340px; top: 134px; width: 227px; }
+.collage__ux     { left: 24px;  top: 186px; width: 218px; }
+.collage__years  { left: 47px;  top: -3px;  width: 363px; }
+.collage__ds4    { left: 388px; top: 7px;   width: 336px; }
+.collage__claude { left: 422px; top: 100px; width: 340px; }
+.collage__item:hover { z-index: 5; }
+
+/* Сферы */
+.spheres { padding-bottom: 40px; }
+
+/* Проекты */
+.projects { display: flex; flex-direction: column; gap: 48px; scroll-margin-top: 24px; }
+
+.bazar {
+  display: flex; align-items: center; gap: 40px;
+  padding: 24px 40px 96px;
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+  background:
+    radial-gradient(ellipse 55% 75% at 48% 78%, rgba(191, 255, 0, .14), rgba(191, 255, 0, 0) 70%),
+    var(--card);
+}
+.bazar__info { display: flex; flex-direction: column; gap: 12px; width: 340px; flex: none; }
+.bazar__logo { width: 175px; margin: 3px 0 6px 1px; }
+.bazar__features { display: flex; justify-content: space-between; flex: 1; max-width: 850px; margin-left: auto; }
+.feature { position: relative; display: block; width: 120px; height: 110px; }
+.feature__sticker { position: absolute; max-width: none; }
+.feature__sticker--redesign { left: 2px;  top: -23px; width: 112px; }
+.feature__sticker--ds       { left: 2px;  top: -9px;  width: 112px; }
+.feature__sticker--redpol   { left: -4px; top: -15px; width: 118px; }
+.feature__sticker--ai       { left: -5px; top: -11px; width: 119px; }
+.feature__note { position: absolute; max-width: none; pointer-events: none; }
+.feature__note--redesign { left: 47px;  top: 114px; width: 65px; }
+.feature__note--ds       { left: -13px; top: 114px; width: 120px; }
+.feature__note--redpol   { left: 11px;  top: 118px; width: 96px; }
+.feature__note--ai       { left: -11px; top: 104px; width: 97px; }
+
+.earlier {
+  display: flex; align-items: center; gap: 40px;
+  padding: 24px 40px 64px 32px;
+  border: 1px solid var(--line); border-radius: var(--r-xl);
+}
+.earlier__title { font: italic 400 32px/40px var(--serif); width: 178px; flex: none; }
+.earlier__list { display: flex; justify-content: space-between; flex: 1; max-width: 1020px; margin-left: auto; }
+.project { position: relative; display: block; width: 210px; height: 100px; }
+.project__sticker { position: absolute; max-width: none; }
+.project__sticker--sandyq  { left: -12px; top: -5px; width: 234px; }
+.project__sticker--daladev { left: 40px;  top: -4px; width: 130px; }
+.project__sticker--chayla  { left: 41px;  top: -4px; width: 128px; }
+.project__sticker--pana    { left: 1px;   top: 5px;  width: 208px; }
+.project__sticker--taza    { left: 43px;  top: -1px; width: 124px; }
+.project__index {
+  position: absolute; left: 0; right: 0; top: 108px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  font: 400 13px/18px var(--sans); color: var(--ink);
+}
+.project__index span { font: 500 11px/14px var(--sans); color: var(--muted); }
+
+/* Планшет */
+@media (max-width: 1360px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 40px; }
+  .collage { align-self: center; }
+  .bazar { flex-direction: column; align-items: flex-start; padding-bottom: 96px; }
+  .bazar__features { width: 100%; max-width: none; margin: 16px 0 0; }
+  .earlier { flex-direction: column; align-items: flex-start; padding-bottom: 72px; }
+  .earlier__title { width: auto; }
+  .earlier__list { width: 100%; max-width: none; margin: 0; }
+}
+
+/* Мобилка */
+@media (max-width: 760px) {
+  .home main { gap: 32px; padding-top: 24px; }
+  .hero { min-height: 0; padding-top: 0; padding-bottom: 0; gap: 24px; }
+  .hero__text { gap: 16px; }
+  .hero__title { font: 400 clamp(30px, 9.6vw, 38px)/1.16 var(--serif); }
+  .hero__title em { font: italic 400 clamp(29px, 9.2vw, 36px)/1.1 var(--serif); }
+  .hero__sub { font: 400 16px/24px var(--sans); }
+
+  .collage { width: 350px; height: 400px; align-self: center; }
+  .collage__photo  { left: 30px;  top: 62px;  width: 196px; }
+  .collage__video  { left: 196px; top: 108px; width: 161px; }
+  .collage__ux     { left: 4px;   top: 240px; width: 119px; }
+  .collage__years  { left: 46px;  top: 0;     width: 240px; }
+  .collage__ds4    { left: 122px; top: 282px; width: 185px; }
+  .collage__claude { left: 40px;  top: 326px; width: 226px; }
+
+  .spheres { padding-bottom: 8px; }
+
+  .projects { gap: 40px; }
+  .bazar { padding: 24px 20px 32px; border-radius: var(--r-l); gap: 28px; }
+  .bazar__logo { width: 150px; }
+  .bazar__info { width: auto; }
+  .bazar__features { display: grid; grid-template-columns: 1fr 1fr; row-gap: 96px; justify-items: center; padding-bottom: 72px; margin: 8px 0 0; }
+  .feature { zoom: .82; }
+
+  .earlier { padding: 20px 20px 72px; border-radius: var(--r-l); gap: 28px; }
+  .earlier__title { font: italic 400 28px/32px var(--serif); }
+  .earlier__list { display: grid; grid-template-columns: 1fr 1fr; row-gap: 56px; justify-items: center; }
+  .earlier__list li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .project { zoom: .66; }
+  .project__index { zoom: 1.4; top: 78px; }
+}

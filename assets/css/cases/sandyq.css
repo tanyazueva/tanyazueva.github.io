@@ -1,0 +1,65 @@
+/* Кейс Sandyq Prime: компоненты кейсов из Notion (дополняют case.css) */
+
+/* Ссылки-пилюли под заголовком */
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pill { display: inline-flex; align-items: center; padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); font: 500 16px/22px var(--sans); color: var(--ink); transition: border-color .2s; }
+a.pill[href]:hover { border-color: var(--ink); }
+
+/* Ряд из двух блоков */
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+
+/* Блок: приподнятая плашка с заголовком, текстом и списком */
+.box { background: var(--card-raised); border-radius: var(--r-l); padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.box h3 { font: 500 18px/24px var(--sans); color: var(--ink); }
+.box p, .text { font: 400 16px/24px var(--sans); color: var(--ink-soft); }
+.stack { display: flex; flex-direction: column; gap: 24px; }
+.stack > .box:last-child { flex: 1; }
+
+/* Маркированный список с акцентными точками */
+.bullets { display: flex; flex-direction: column; gap: 8px; }
+.bullets li { display: flex; gap: 12px; font: 400 16px/24px var(--sans); color: var(--ink-soft); }
+.bullets li::before { content: "•"; flex: none; width: 11px; color: var(--accent); }
+
+/* Плитки «Для бизнеса / Для клиентов» */
+.minis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; align-items: start; }
+.minis--3 { grid-template-columns: repeat(3, 1fr); }
+.mini { background: var(--card-raised); border-radius: var(--r-m); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
+.mini h4 { font: 500 16px/22px var(--sans); color: var(--ink); }
+.mini p { font: 400 14px/20px var(--sans); color: var(--muted); }
+
+/* Цифры результата */
+.figures { display: flex; flex-direction: column; gap: 16px; }
+
+/* Раздел «визуал + текст» */
+.fsec { display: grid; gap: 40px; align-items: start; }
+.fsec__text { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+.shot { width: 100%; border-radius: var(--r-l); }
+.pic { width: 100%; border-radius: var(--r-m); }
+.row2 > .shot { align-self: center; }
+
+/* Плашка-визуал с подписью */
+.panel { margin: 0; background: var(--card-raised); border-radius: var(--r-l); padding: 32px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 12px; }
+.panel img { width: 100%; border-radius: 14px; }
+.panel__cap { width: 100%; font: 400 14px/20px var(--sans); color: var(--muted); }
+
+/* Цитата и акцентная ссылка */
+.quote { margin: 0; border-left: 2px solid var(--accent); padding-left: 20px; color: var(--ink); }
+.accent-link { align-self: flex-start; font: 500 16px/22px var(--sans); color: var(--accent); }
+.accent-link:hover { text-decoration: underline; }
+
+@media (max-width: 1100px) {
+  .fsec, .row2, .lib-row { grid-template-columns: 1fr !important; }
+  .fsec { gap: 24px; }
+  .fsec__text { order: -1; }
+  .minis--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .row2 { gap: 16px; }
+  .box { padding: 20px; }
+  .box h3 { font: 500 16px/22px var(--sans); }
+  .box p, .text, .bullets li { font: 400 15px/22px var(--sans); }
+  .minis, .minis--3 { grid-template-columns: 1fr; }
+  .panel { padding: 20px; }
+  .fsec__text { gap: 16px; }
+}

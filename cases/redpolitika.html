@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Редполитика — Таня Зуева</title>
+<meta name="description" content="Гайд по интерфейсным текстам продукта БАЗАР: голос, знаки, числа, деньги, кнопки и уведомления — и редполитика в md-файле, по которой пишет Claude.">
+<link rel="canonical" href="https://tanyazueva.github.io/cases/redpolitika.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Таня Зуева">
+<meta property="og:title" content="Редполитика — Таня Зуева">
+<meta property="og:description" content="Гайд по интерфейсным текстам продукта БАЗАР: голос, знаки, числа, деньги, кнопки и уведомления — и редполитика в md-файле, по которой пишет Claude.">
+<meta property="og:url" content="https://tanyazueva.github.io/cases/redpolitika.html">
+<meta property="og:image" content="https://tanyazueva.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f0f11">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/case.css">
+<link rel="stylesheet" href="../assets/css/cases/redpolitika.css">
+</head>
+<body>
+<div class="wrap">
+<header class="site-header">
+  <a class="site-header__name" href="../index.html">Таня Зуева</a>
+  <nav class="site-header__nav" aria-label="Разделы">
+    <a href="../index.html#projects">Проекты</a>
+    <a href="../index.html#about">Обо мне</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Язык">
+    <span class="lang__item lang__item--active" aria-current="true"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fr"><rect width="20" height="20" rx="10"/></clipPath></defs><g clip-path="url(#fr)"><rect width="20" height="7" fill="#fff"/><rect y="6.67" width="20" height="6.67" fill="#0039A6"/><rect y="13.33" width="20" height="6.67" fill="#D52B1E"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></svg>RU</span>
+    <span class="lang__item" aria-disabled="true" title="English version is coming soon"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fe"><rect width="20" height="20" rx="10"/></clipPath></defs><g opacity=".55"><g clip-path="url(#fe)"><rect width="20" height="20" fill="#012169"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#fff" stroke-width="4"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#C8102E" stroke-width="1.33"/><path d="M10 0v20M0 10h20" stroke="#fff" stroke-width="6.67"/><path d="M10 0v20M0 10h20" stroke="#C8102E" stroke-width="4"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>EN</span>
+  </div>
+</header>
+  <div class="case-top">
+    <a class="back" href="../index.html#projects">← Все проекты</a>
+  </div>
+  <div class="cover">
+    <img src="../assets/img/redpolitika/rp_cover.webp" width="1200" height="600" alt="Обложка гайда «Тексты в интерфейсе. Редполитика продукта БАЗАР» с разделами: Голос, Принципы текста, Знаки, Числа, Валюты, Слова и ещё 3 раздела; 3D-буква «ё», колокольчик и рупор">
+  </div>
+</div>
+
+<main class="wrap wrap--case case">
+  <section class="card intro">
+    <ul class="tags"><li class="tag">UX writing</li><li class="tag">Гайд</li><li class="tag">БАЗАР</li></ul>
+    <div class="title-block">
+      <h1 class="t-h1">Редполитика</h1>
+      <p class="sub">Гайд по интерфейсным текстам продукта БАЗАР: голос, знаки, числа, деньги, кнопки и уведомления</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt class="fact__label">Роль</dt><dd class="fact__value">Senior Product Designer</dd></div>
+      <div class="fact"><dt class="fact__label">Формат</dt><dd class="fact__value">Гайд в Figma</dd></div>
+      <div class="fact"><dt class="fact__label">Для кого</dt><dd class="fact__value">Дизайнеры, маркетинг, аналитика, разработка</dd></div>
+    </dl>
+    <div class="block">
+      <h3 class="t-h3">Задача</h3>
+      <p>В БАЗАР не было единых правил для интерфейсных текстов. Даже была договорённость про «ё» была, но её не соблюдали, и экраны выглядели разношёрстно. Я предложила собрать редполитику и полностью собрала её сама </p>
+    </div>
+    <div class="block block--list">
+      <h3 class="t-h3">Как работала</h3>
+      <ul class="done">
+        <li class="done__item"><span class="done__icon ic-box"><img src="../assets/img/redpolitika/rp_ic_search.svg" width="24" height="24" alt=""></span><div><h4>Бенчмарк</h4><p>Разобрала гайды 15 российских брендов: Ozon, Т-Банк, Додо, Контур, Авито, Сбер и других</p></div></li>
+        <li class="done__item"><span class="done__icon ic-box"><img src="../assets/img/redpolitika/rp_ic_copy.svg" width="24" height="24" alt=""></span><div><h4>Договорилась с разработкой</h4><p>Показала, как работают неразрывные пробелы, и убедила копировать тексты из Figma, а не набирать вручную</p></div></li>
+        <li class="done__item"><span class="done__icon ic-box"><img src="../assets/img/redpolitika/rp_ic_check.svg" width="24" height="24" alt=""></span><div><h4>Решения</h4><p>Где правила расходятся, выбрала одно: «ё» пишем всегда, точку в конце блока не ставим, эмодзи в интерфейсе не используем</p></div></li>
+        <li class="done__item"><span class="done__icon ic-box"><img src="../assets/img/redpolitika/rp_ic_doc.svg" width="24" height="24" alt=""></span><div><h4>Гайд в Figma</h4><p>Оформила интерактивный гайд по принципу: правило → почему → примеры «так / не так»</p></div></li>
+      </ul>
+    </div>
+    <div class="block block--tiles">
+      <h3 class="t-h3">Результат</h3>
+      <ul class="tiles tiles--3">
+        <li class="tile"><span class="tile__num">4</span><p>дизайнера, а ещё маркетинг и аналитика работают по гайду</p></li>
+        <li class="tile"><span class="tile__num">60</span><p>правил в целом и 27 решений по спорным правилам</p></li>
+        <li class="tile"><span class="tile__num">Принят</span><p>гайд утвердили почти без правок</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rp-grid">
+    <section class="card rp-part">
+      <div class="section__head">
+        <p class="eyebrow">01 </p>
+        <div class="title-block">
+          <h2 class="t-h2">Голос продукта</h2>
+          <p>Обращение, тон по ситуации, извинения и чего не делаем никогда</p>
+        </div>
+      </div>
+      <img class="rp-shot" src="../assets/img/redpolitika/rp_voice.png" width="510" height="200" alt="Правило из гайда «Обращение на «вы»»: обращаемся на «вы», со строчной — примеры «так» и «не так»" loading="lazy">
+    </section>
+
+    <section class="card rp-part">
+      <div class="section__head">
+        <p class="eyebrow">02 </p>
+        <div class="title-block">
+          <h2 class="t-h2">Принципы текста </h2>
+          <p>Краткость, главное вперёд, глаголы вместо канцелярита</p>
+        </div>
+      </div>
+      <img class="rp-shot" src="../assets/img/redpolitika/rp_principles.png" width="510" height="200" alt="Правило из гайда «Порядок слов»: главное — в начале заголовка и первой фразы, с примерами «так» и «не так»" loading="lazy">
+    </section>
+
+    <section class="card rp-part">
+      <div class="section__head">
+        <p class="eyebrow">03 </p>
+        <div class="title-block">
+          <h2 class="t-h2">Знаки</h2>
+          <p>Ё, точка, тире, кавычки, неразрывный пробел, эмодзи и другие мелочи, из которых складывается текст</p>
+        </div>
+      </div>
+      <img class="rp-shot" src="../assets/img/redpolitika/rp_signs.png" width="510" height="343" alt="Правило из гайда «Буква ё»: пишем ё везде, где она есть, — примеры, исключение и объяснение «почему так»" loading="lazy">
+    </section>
+
+    <section class="card rp-part">
+      <div class="title-block">
+        <h2 class="t-h2">И ещё 6 разделов</h2>
+        <p>Плюс чек-лист к тексту и полезные ссылки</p>
+      </div>
+      <dl class="topics">
+        <div class="topics__row"><dt>Числа</dt><dd>Цифры, разряды, проценты, большие числа, даты, время, телефон</dd></div>
+        <div class="topics__row"><dt>Валюты</dt><dd>Знак и код валюты, копейки, криптовалюта, диапазоны, цена за период</dd></div>
+        <div class="topics__row"><dt>Слова</dt><dd>Словарь, стоп-слова, компании, иностранные слова, род</dd></div>
+        <div class="topics__row"><dt>Элементы интерфейса</dt><dd>Заголовки, кнопки, ссылки, подтверждения, поля ввода, снекбары</dd></div>
+        <div class="topics__row"><dt>Состояния</dt><dd>Ошибки, сообщения об успехе, пустые состояния, готовые тексты</dd></div>
+        <div class="topics__row"><dt>Уведомления</dt><dd>Структура пуша, заголовок и текст, несколько новостей, эмодзи</dd></div>
+      </dl>
+    </section>
+  </div>
+
+  <section class="card rp-ba">
+    <div class="section__head">
+      <p class="eyebrow">До и после</p>
+      <div class="title-block">
+        <h2 class="t-h2">Как гайд меняет экраны</h2>
+        <p>Старые тексты не переписывали разом. Дорабатываем фичу — заодно переписываем её тексты по гайду. На откровенно плохие тексты заводим отдельные задачи</p>
+      </div>
+    </div>
+    <div class="examples">
+      <article class="ex">
+        <figure class="ex__shot"><figcaption>До гайда</figcaption><img src="../assets/img/redpolitika/rp_s1_before.png" width="260" height="563" alt="Экран пустой ленты подписок до гайда: «Пока нет подписок. Находи интересных авторов и подписывайся, чтобы быть в курсе нового!»" loading="lazy"></figure>
+        <figure class="ex__shot"><figcaption>По гайду</figcaption><img src="../assets/img/redpolitika/rp_s1_after.png" width="260" height="563" alt="Экран пустой ленты подписок по гайду: «Пока нет подписок. Подпишитесь на авторов — их посты появятся в этой ленте»" loading="lazy"></figure>
+        <div class="ex__text">
+          <h3 class="t-h4">Пустая лента подписок</h3>
+          <p class="ex__rule">Правило «Пустые состояния»: что здесь появится и как это получить</p>
+          <div class="args--col">
+            <div class="arg"><h4>На «вы», со строчной</h4><p>«Подпишитесь на авторов» вместо «Находи интересных авторов и подписывайся», «Для вас» вместо «Для Вас»</p></div>
+            <div class="arg"><h4>Что здесь появится</h4><p>«Их посты появятся в этой ленте» вместо «чтобы быть в курсе нового»</p></div>
+            <div class="arg"><h4>Без «!»</h4><p>Восклицательный знак ставим только в поздравлении и благодарности</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex">
+        <figure class="ex__shot"><figcaption>До гайда</figcaption><img src="../assets/img/redpolitika/rp_s2_before.png" width="260" height="563" alt="Алерт удаления поста до гайда: «Вы действительно хотите удалить пост? Отменить это действие невозможно», кнопки «Отменить» и «Удалить»" loading="lazy"></figure>
+        <figure class="ex__shot"><figcaption>По гайду</figcaption><img src="../assets/img/redpolitika/rp_s2_after.png" width="260" height="563" alt="Алерт удаления поста по гайду: «Удалить пост? После удаления восстановить его не получится», кнопки «Удалить» и «Отмена»" loading="lazy"></figure>
+        <div class="ex__text">
+          <h3 class="t-h4">Алерт удаления поста</h3>
+          <p class="ex__rule">Правило «Подтверждение»: спрашиваем только о том, что нельзя вернуть</p>
+          <div class="args--col">
+            <div class="arg"><h4>Заголовок — вопрос с действием</h4><p>«Удалить пост?» вместо «Вы действительно хотите удалить пост?»</p></div>
+            <div class="arg"><h4>Описание — что будет после</h4><p>«После удаления восстановить его не получится» вместо строгого «Отменить это действие невозможно»</p></div>
+            <div class="arg"><h4>Вторая кнопка — «Отмена»</h4><p>«Отменить» рядом с «Отменить это действие невозможно» путало: непонятно, что отменяем</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex">
+        <figure class="ex__shot"><figcaption>До гайда</figcaption><img src="../assets/img/redpolitika/rp_s3_before.png" width="260" height="563" alt="Экран «Пост не найден» до гайда: «Пост недоступен. Возможно, его больше не существует. Надеемся, вам понравятся другие посты!»" loading="lazy"></figure>
+        <figure class="ex__shot"><figcaption>По гайду</figcaption><img src="../assets/img/redpolitika/rp_s3_after.png" width="260" height="563" alt="Экран «Пост не найден» по гайду: «Его удалили или скрыли», кнопка «Вернуться в ленту»" loading="lazy"></figure>
+        <div class="ex__text">
+          <h3 class="t-h4">Пост не найден</h3>
+          <p class="ex__rule">Правило «Ошибки»: что произошло и что делать дальше</p>
+          <div class="args--col">
+            <div class="arg"><h4>Что произошло — без неопределенности</h4><p>«Удалили или скрыли» вместо «Возможно, его больше не существует»</p></div>
+            <div class="arg"><h4>Что делать — кнопка</h4><p>«Вернуться в ленту» вместо экрана, с которого некуда уйти</p></div>
+            <div class="arg"><h4>Без чувств и «!»</h4><p>Убрали «Надеемся, вам понравятся другие посты!»: не приписываем чувств и не ставим «!»</p></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="card rp-claude">
+    <ul class="tags"><li class="tag">Самое полезное в проекте</li></ul>
+    <div class="title-block">
+      <h2 class="t-h2">Редполитика, по которой пишет Claude</h2>
+      <p>Гайд в Figma нужно открыть и найти в нём правило. Поэтому я собрала редполитику в md-файл для Claude — агент знает все решения и применяет их в работе</p>
+    </div>
+    <div class="rp-claude__visual">
+      <div class="panel">
+        <p class="panel__head t-label"><span class="panel__dot" aria-hidden="true"></span>redpolitika-claude.md</p>
+        <pre class="md t-code"><span class="md__h">## Как отвечать</span>
+1. Сначала готовый текст, потом пояснение
+2. Правило → почему → так / не так
+3. Ссылка на раздел гайда: «Числа → Время»
+4. Не решено — не выдумывай, спроси
+
+<span class="md__h">## Числа</span>
+| Время | 09:00 | не 9:00 |
+| Проценты | 12,5% | не 12,5 % |
+| Разряды | 12 500 ₽ | не 12500 ₽ |
+| Срок | до 15 марта включительно |</pre>
+      </div>
+      <div class="panel">
+        <p class="panel__head t-label"><img src="../assets/img/redpolitika/rp_ic_chat16.svg" width="16" height="16" alt="">Пример работы</p>
+        <p class="chat-me">Проверь тексты на экране подписки Premium</p>
+        <div class="chat-claude">
+          <h3 class="chat-claude__title">Нашёл 3 правки:</h3>
+          <div class="fix"><p><span class="c-muted">«Premium за 299,00 ₽.»</span> → «Premium за 299 ₽»</p><p class="fix__ref">Валюты → круглая сумма без нулей; Знаки → точка</p></div>
+          <div class="fix"><p><span class="c-muted">«Действует до 15 марта»</span> → «Действует до 15 марта включительно»</p><p class="fix__ref">Числа → Срок</p></div>
+          <div class="fix"><p><span class="c-muted">«Продлим в 9:00»</span> → «Продлим в 09:00»</p><p class="fix__ref">Числа → Время</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="rp-claude__blocks">
+      <div class="panel">
+        <h3 class="panel__title"><img src="../assets/img/redpolitika/rp_ic_doc20.svg" width="20" height="20" alt="">Что внутри</h3>
+        <ul class="dots">
+          <li>Все решения в таблицах  «так / не так»</li>
+          <li>Голос продукта: тон, извинения, шутки по каналам</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 class="panel__title"><img src="../assets/img/redpolitika/rp_ic_light.svg" width="20" height="20" alt="">Как работает</h3>
+        <ul class="dots">
+          <li>Дизайнер просит агента написать или проверить текст</li>
+          <li>Агент правит по правилам и ссылается на раздел гайда</li>
+          <li>Нерешённое не выдумывает — спрашивает</li>
+          <li>Ошибки в старых фичах отмечает отдельно, как легаси</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3 class="panel__title"><img src="../assets/img/redpolitika/rp_ic_trend.svg" width="20" height="20" alt="">Что изменилось</h3>
+        <ul class="dots">
+          <li>Не нужно держать 60 правил в голове</li>
+          <li>Тексты в макетах, задачах и спецификациях звучат одинаково</li>
+          <li>Новое решение — одна строка в файле, и агент сразу его знает</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+<footer class="footer">
+  <nav class="footer-projects" aria-label="Проекты">
+    <div class="footer-projects__group">
+      <h2 class="t-h2">БАЗАР</h2>
+      <div class="chips">
+        <a class="chip" href="../cases/redesign.html">Полный редизайн</a>
+        <a class="chip" href="../cases/design-system.html">Новая дизайн-система</a>
+        <span class="chip chip--current" aria-current="page">Редполитика</span>
+        <a class="chip" href="../cases/ai.html">ИИ в команде</a>
+      </div>
+    </div>
+    <div class="footer-projects__group">
+      <h2 class="t-h2">Другие проекты</h2>
+      <div class="chips">
+        <a class="chip" href="../cases/sandyq.html">Sandyq Prime</a>
+        <a class="chip" href="../cases/daladev.html">DalaDev Core</a>
+        <a class="chip" href="../cases/chayla.html">Chayla App</a>
+        <a class="chip" href="../cases/pana.html">Pana</a>
+        <a class="chip" href="../cases/taza.html">Taza</a>
+      </div>
+    </div>
+  </nav>
+  <div class="contacts">
+    <ul class="contacts__list">
+      <li><a class="contact" href="https://t.me/worldofsea" target="_blank" rel="noopener" data-goatcounter-click="contact-telegram"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.70231 9.78639C6.72318 7.91862 9.41093 6.7114 10.7656 6.11918C14.5929 4.43363 15.3885 4.13752 15.9045 4.11475C16.012 4.11475 16.2701 4.13752 16.4421 4.27419C16.5711 4.38808 16.6141 4.54752 16.6356 4.66141C16.6571 4.7753 16.6786 5.02585 16.6571 5.23085C16.4421 7.5314 15.5605 13.1575 15.0875 15.7314C14.8939 16.8247 14.5069 17.1891 14.1414 17.2347C13.3458 17.303 12.7222 16.6652 11.9482 16.1414C10.7441 15.2986 10.056 14.7747 8.87338 13.9547C7.51876 12.998 8.40034 12.4742 9.17441 11.6314C9.36793 11.4036 12.9158 8.00973 12.9803 7.69084C12.9803 7.64529 13.0018 7.50862 12.9158 7.44029C12.8298 7.37195 12.7222 7.39473 12.6362 7.41751C12.5072 7.44029 10.572 8.80695 6.80919 11.4947C6.25014 11.9047 5.75559 12.0869 5.30405 12.0869C4.8095 12.0869 3.86341 11.7908 3.15385 11.5403C2.29377 11.2442 1.6057 11.0847 1.67021 10.5836C1.71321 10.3331 2.05725 10.0597 2.70231 9.78639Z" stroke="currentColor" stroke-width="1.5"/></svg></span><span><span class="contact__label">Telegram</span><span class="contact__value">@worldofsea</span></span></a></li>
+      <li><a class="contact" href="mailto:tzueva.work@gmail.com" data-goatcounter-click="contact-email"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M11.8984 3.0166C13.6484 3.04405 14.7538 3.04643 15.7012 3.48438C16.7101 3.95094 17.5993 4.85495 18.0498 5.87109C18.4723 6.82439 18.458 7.89363 18.458 9.58301C18.458 10.8445 18.459 11.8504 18.3711 12.6641C18.2812 13.4959 18.0923 14.196 17.6729 14.832C17.3395 15.3373 16.8651 15.8158 16.3633 16.1543C15.7301 16.5813 15.0261 16.7767 14.1865 16.875C13.364 16.9713 12.3431 16.9809 11.0605 16.9941C10.6924 16.9979 10.3351 17 9.99902 17C9.66311 17 9.30637 16.9979 8.93848 16.9941C7.65614 16.9809 6.63499 16.9712 5.8125 16.875C4.97289 16.7767 4.26798 16.5813 3.63477 16.1543C3.1331 15.8159 2.65942 15.3372 2.32617 14.832C1.90666 14.1959 1.71785 13.4959 1.62793 12.6641C1.54 11.8504 1.54102 10.8445 1.54102 9.58301C1.54101 7.89371 1.52578 6.82435 1.94824 5.87109C2.39884 4.85482 3.28877 3.95086 4.29785 3.48438C5.2453 3.04648 6.35038 3.04406 8.10059 3.0166C8.76401 3.00619 9.4132 3 9.99902 3C10.5849 3 11.2349 3.00619 11.8984 3.0166ZM12.9414 8.91602C11.8606 9.5284 10.9604 9.91595 9.99902 9.91602C9.03783 9.91593 8.13823 9.52826 7.05762 8.91602L3.22266 6.74316C3.05343 7.29391 3.04102 8.02138 3.04102 9.58301C3.04102 10.8769 3.04192 11.7883 3.11914 12.5029C3.19442 13.1993 3.33684 13.64 3.57812 14.0059C3.80253 14.3461 4.13576 14.6832 4.47363 14.9111C4.83542 15.1551 5.27878 15.3019 5.98633 15.3848C6.71111 15.4696 7.63872 15.4806 8.95312 15.4941C9.31717 15.4979 9.66917 15.5 9.99902 15.5C10.3289 15.5 10.6809 15.4979 11.0449 15.4941C12.3593 15.4806 13.2869 15.4696 14.0117 15.3848C14.7192 15.3019 15.1627 15.155 15.5244 14.9111C15.8623 14.6832 16.1965 14.3461 16.4209 14.0059C16.6621 13.64 16.8046 13.1992 16.8799 12.5029C16.9571 11.7884 16.958 10.8769 16.958 9.58301C16.958 8.02126 16.9447 7.29392 16.7754 6.74316L12.9414 8.91602ZM8.12402 4.5166C6.23382 4.54626 5.51766 4.57321 4.92773 4.8457C4.60743 4.99377 4.29968 5.21476 4.03125 5.47754L7.79688 7.61133C8.83934 8.20196 9.45003 8.41593 9.99902 8.41602C10.5481 8.41595 11.1594 8.20215 12.2021 7.61133L15.9668 5.47754C15.6985 5.21493 15.3914 4.99373 15.0713 4.8457C14.4813 4.57301 13.7647 4.54627 11.874 4.5166C11.2155 4.50627 10.5745 4.5 9.99902 4.5C9.42352 4.5 8.78254 4.50627 8.12402 4.5166Z" fill="currentColor"/></svg></span><span><span class="contact__label">Почта</span><span class="contact__value">tzueva.work@gmail.com</span></span></a></li>
+      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.08735 8.78442L6.28772 6.58407C6.73656 6.13522 6.89188 5.47202 6.71034 4.86377C6.56839 4.38814 6.40846 3.81637 6.30215 3.32743C6.20383 2.87522 5.80701 2.5 5.34424 2.5H4.08735C3.16181 2.5 2.40174 3.2532 2.50326 4.17317C3.27505 11.1663 8.82782 16.7191 15.821 17.4909C16.7409 17.5924 17.4942 16.8323 17.4942 15.9068V14.6499C17.4942 14.1872 17.1174 13.8075 16.6621 13.7247C16.1598 13.6333 15.6284 13.4837 15.1838 13.3419C14.5451 13.1382 13.8351 13.2814 13.3611 13.7554L11.2097 15.9068" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="contact__label">Телефон</span><span class="contact__value">+7 (905) 117-39-76</span></span></a></li>
+    </ul>
+    <p class="contacts__copy">Таня Зуева · 2026</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
