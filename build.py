@@ -102,10 +102,6 @@ def header(lang: str, path: str, prefix: str, pages: str) -> str:
         en = f'<span class="lang__item lang__item--active" aria-current="true">{flag_en(True)}EN</span>'
     return f"""<header class="site-header">
   <a class="site-header__name" href="{pages}index.html">{t["name"]}</a>
-  <nav class="site-header__nav" aria-label="{t["nav"]}">
-    <a href="{pages}index.html#projects">{t["projects"]}</a>
-    <a href="{pages}index.html#about">{t["about"]}</a>
-  </nav>
   <div class="lang" role="group" aria-label="{t["lang"]}">
     {ru}
     {en}
