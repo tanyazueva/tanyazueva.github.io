@@ -131,3 +131,11 @@
   .video-modal { width: calc(100vw - 24px); }
   .video-modal__video { border-radius: var(--r-m); }
 }
+
+/* Английская версия: стикеры с английским текстом длиннее русских */
+html[lang="en"] .collage__years { width: 388px; }
+html[lang="en"] .collage__ds4   { left: 376px; width: 378px; }
+@media (max-width: 760px) {
+  html[lang="en"] .collage__years { width: 257px; }
+  html[lang="en"] .collage__ds4   { left: 122px; width: 208px; }
+}

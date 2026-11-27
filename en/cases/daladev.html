@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DalaDev core design system&nbsp;— Tanya Zueva</title>
+<meta name="description" content="How we&nbsp;built the DalaDev Core Design System to&nbsp;speed up&nbsp;designers and developers and keep interfaces consistent across all products">
+<link rel="canonical" href="https://tanyazueva.github.io/en/cases/daladev.html">
+<link rel="alternate" hreflang="ru" href="https://tanyazueva.github.io/cases/daladev.html">
+<link rel="alternate" hreflang="en" href="https://tanyazueva.github.io/en/cases/daladev.html">
+<link rel="alternate" hreflang="x-default" href="https://tanyazueva.github.io/cases/daladev.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:site_name" content="Tanya Zueva">
+<meta property="og:title" content="DalaDev core design system&nbsp;— Tanya Zueva">
+<meta property="og:description" content="How we&nbsp;built the DalaDev Core Design System to&nbsp;speed up&nbsp;designers and developers and keep interfaces consistent across all products">
+<meta property="og:url" content="https://tanyazueva.github.io/en/cases/daladev.html">
+<meta property="og:image" content="https://tanyazueva.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f0f11">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&family=Manrope:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/tokens.css?v=09a2c811">
+<link rel="stylesheet" href="../../assets/css/site.css?v=08f0ff6d">
+<script src="../../assets/js/lightbox.js?v=2539dd05" defer></script>
+<link rel="stylesheet" href="../../assets/css/case.css?v=a74fc576">
+<link rel="stylesheet" href="../../assets/css/cases/daladev.css?v=0f7d0747">
+</head>
+<body>
+<div class="wrap">
+<header class="site-header">
+  <a class="site-header__name" href="../index.html">Tanya Zueva</a>
+  <nav class="site-header__nav" aria-label="Sections">
+    <a href="../index.html#projects">Projects</a>
+    <a href="../index.html#about">About</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Language">
+    <a class="lang__item" href="../../cases/daladev.html" hreflang="ru" lang="ru" title="Русская версия"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fr"><rect width="20" height="20" rx="10"/></clipPath></defs><g opacity=".55"><g clip-path="url(#fr)"><rect width="20" height="7" fill="#fff"/><rect y="6.67" width="20" height="6.67" fill="#0039A6"/><rect y="13.33" width="20" height="6.67" fill="#D52B1E"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>RU</a>
+    <span class="lang__item lang__item--active" aria-current="true"><svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fe"><rect width="20" height="20" rx="10"/></clipPath></defs><g><g clip-path="url(#fe)"><rect width="20" height="20" fill="#012169"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#fff" stroke-width="4"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#C8102E" stroke-width="1.33"/><path d="M10 0v20M0 10h20" stroke="#fff" stroke-width="6.67"/><path d="M10 0v20M0 10h20" stroke="#C8102E" stroke-width="4"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>EN</span>
+  </div>
+</header>
+  <div class="case-top">
+    <a class="back" href="../index.html#projects">← All projects</a>
+  </div>
+  <div class="cover">
+    <img src="../../assets/img/daladev/cover.webp" width="1200" height="600" alt="Case cover: DalaDev Core Design System logo">
+  </div>
+</div>
+
+<main class="wrap wrap--case case">
+  <section class="card intro">
+    <ul class="tags"><li class="tag">Design System</li><li class="tag">Design tokens</li><li class="tag">Product design</li></ul>
+    <div class="title-block">
+      <h1 class="t-h1">DalaDev core design system</h1>
+      <p class="sub">How we&nbsp;built the DalaDev Core Design System to&nbsp;speed up&nbsp;designers and developers and keep interfaces consistent across all products</p>
+    </div>
+    <dl class="facts">
+      <div class="fact"><dt class="fact__label">Role</dt><dd class="fact__value">Design side of&nbsp;the design system</dd></div>
+      <div class="fact"><dt class="fact__label">Type</dt><dd class="fact__value">Design system, tokens</dd></div>
+      <div class="fact"><dt class="fact__label">Tools</dt><dd class="fact__value">Figma</dd></div>
+    </dl>
+    <div class="row2">
+      <div class="box">
+        <h3>Why did we&nbsp;need&nbsp;it?</h3>
+        <p>At&nbsp;DalaDev we&nbsp;had a&nbsp;choice:</p>
+        <ul class="bullets">
+          <li>Use an&nbsp;existing design system</li>
+          <li>Build our own, tailored to&nbsp;our needs</li>
+        </ul>
+        <p>Analyzing existing solutions showed that none of&nbsp;them covered our needs. So&nbsp;we&nbsp;decided to&nbsp;create DalaDev Core Design System&nbsp;— a&nbsp;universal multi-brand system to&nbsp;speed up&nbsp;designers and developers</p>
+      </div>
+      <div class="box">
+        <h3>Problems we&nbsp;solved</h3>
+        <ul class="bullets">
+          <li>Duplicated work&nbsp;— standard elements were rebuilt for every project</li>
+          <li>No&nbsp;standards&nbsp;— fonts, styles and sizes needed constant recalibration</li>
+          <li>Poor file structure&nbsp;— components were badly organized</li>
+          <li>Inconsistent web and mobile design&nbsp;— web interfaces were poorly adapted</li>
+        </ul>
+      </div>
+    </div>
+    <h2 class="t-text-l-m">Goals</h2>
+    <div class="minis minis--3">
+      <div class="mini"><h4>Unified UI&nbsp;kit</h4><p>Create a&nbsp;unified UI&nbsp;kit based on&nbsp;design tokens</p></div>
+      <div class="mini"><h4>Flexible components</h4><p>Build a&nbsp;flexible component system for all products</p></div>
+      <div class="mini"><h4>Training</h4><p>Teach the team to&nbsp;work with tokens</p></div>
+      <div class="mini"><h4>Adoption</h4><p>Build the system into development processes</p></div>
+      <div class="mini"><h4>Evolution</h4><p>Maintain and evolve the system</p></div>
+    </div>
+    <div class="figures">
+      <h2 class="t-h3">Results</h2>
+      <ul class="tiles">
+        <li class="tile"><span class="tile__num">58</span><p>components built on&nbsp;design tokens</p></li>
+        <li class="tile"><span class="tile__num">2</span><p>modes in&nbsp;Variables: mobile and desktop</p></li>
+        <li class="tile"><span class="tile__num">90%</span><p>of&nbsp;time saved on&nbsp;routine tasks</p></li>
+        <li class="tile"><span class="tile__num">4&nbsp;px</span><p>grid step&nbsp;— we&nbsp;moved to&nbsp;a&nbsp;4-pixel grid</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="sections">
+    <section class="card">
+      <p class="eyebrow">01</p>
+      <h2 class="t-h2">Products using DalaDev Core</h2>
+      <img class="pic" src="../../assets/img/daladev/products.webp" width="1120" height="211" alt="Product logos: Sandyq Prime, QR&nbsp;PAY, Chayla Group, Pana, Taza, Minmin" loading="lazy">
+      <ul class="bullets">
+        <li>Sandyq Prime&nbsp;— loyalty program and QR&nbsp;menu for Sandyq Group restaurants</li>
+        <li>QR&nbsp;PAY&nbsp;— payments, tips, pickup tablets</li>
+        <li>Chayla Group&nbsp;— loyalty program and QR&nbsp;menu for Chayla Group restaurants</li>
+        <li>Pana&nbsp;— booking stays and experiences</li>
+        <li>Taza&nbsp;— B2B purchasing</li>
+        <li>Minmin&nbsp;— classifieds</li>
+        <li>Naprocat&nbsp;— rentals (project closed)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">02</p>
+        <h2 class="t-h2">Research</h2>
+        <div class="row2 lib-row" style="grid-template-columns: 636fr 460fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>We&nbsp;studied open design systems:</h3>
+              <ul class="bullets">
+                <li>Atomaro (Avito)</li>
+                <li>Material Design</li>
+                <li>Atlassian</li>
+                <li>Ant Design</li>
+              </ul>
+              <p>We&nbsp;read many articles on&nbsp;how design systems work: Dodo IS&nbsp;by&nbsp;Dodo, OZI by&nbsp;OZON, Encore by&nbsp;Spotify, Lightning by&nbsp;Salesforce, Carbon by&nbsp;IBM, Base by&nbsp;Uber, Polaris by&nbsp;Shopify and Microsoft Fluent</p>
+            </div>
+            <div class="box">
+              <h3>Analysis criteria:</h3>
+              <ul class="bullets">
+                <li>Token semantics&nbsp;— how they name their tokens and why</li>
+                <li>Token structure&nbsp;— nesting and complexity of&nbsp;token groups</li>
+                <li>Sizing scale&nbsp;— which units they break numeric values into, and how sizing scales relate to&nbsp;each other across categories</li>
+                <li>Whether there’s a&nbsp;base unit that sizes are calculated from, or&nbsp;sizes are set manually</li>
+                <li>Mobile and desktop tokens&nbsp;— whether they use Modes in&nbsp;variables or&nbsp;a&nbsp;separate file</li>
+              </ul>
+            </div>
+          </div>
+          <img class="shot" src="../../assets/img/daladev/research.webp" width="460" height="620" alt="Handwritten notes comparing the tokens and sizing scales of&nbsp;different design systems" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">03</p>
+        <h2 class="t-h2">Building the design side</h2>
+        <div class="row2 lib-row" style="grid-template-columns: 636fr 460fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>Key steps</h3>
+              <ul class="bullets">
+                <li>Audit and componentization of&nbsp;existing elements</li>
+                <li>A&nbsp;component library with variants and states</li>
+                <li>Design tokens (colors, sizes, typography)</li>
+                <li>Documentation and guides for the system</li>
+                <li>A&nbsp;presentation for the team&nbsp;— training on&nbsp;how to&nbsp;use the system</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h3>Extras</h3>
+              <p>To&nbsp;speed up&nbsp;the work, we:</p>
+              <ul class="bullets">
+                <li>Adopted the ion icons icon font</li>
+                <li>Put together a&nbsp;universal set of&nbsp;neutral images for modals and empty states that works across all products</li>
+                <li>Unified interface copy (removed brand references, standardized the tone)</li>
+                <li>Optimized and standardized the sizes and aspect ratios of&nbsp;images used in&nbsp;the apps</li>
+                <li>Moved to&nbsp;a&nbsp;4-pixel grid</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="panel">
+            <img src="../../assets/img/daladev/slides.webp" width="396" height="285" alt="Slides from the design system presentation for the team" loading="lazy">
+            <figcaption class="panel__cap">Slides from the presentation we&nbsp;gave the team (some data is&nbsp;outdated since)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="fsec__text">
+        <p class="eyebrow">04</p>
+        <div class="title-block">
+          <h2 class="t-h2">Implementation in&nbsp;code</h2>
+          <p class="sub">Developers built a&nbsp;JSON → Flutter converter. I&nbsp;tested handoff methods, ran design reviews and helped with implementation</p>
+        </div>
+        <div class="row2 lib-row" style="grid-template-columns: 496fr 600fr; gap: 24px">
+          <div class="stack">
+            <div class="box">
+              <h3>Component flexibility</h3>
+              <p>Most components (where applicable) are set up&nbsp;to&nbsp;work on&nbsp;both mobile and desktop screens. This is&nbsp;done with Modes in&nbsp;Variables, where we&nbsp;created two modes&nbsp;— mobile and desktop</p>
+            </div>
+            <div class="box">
+              <h3>Results</h3>
+              <ul class="bullets">
+                <li>58&nbsp;components on&nbsp;design tokens</li>
+                <li>Universal adaptation for mobile and desktop</li>
+                <li>Modes in&nbsp;Variables for flexible scaling</li>
+                <li>Easier work for developers&nbsp;— interfaces are assembled like a&nbsp;construction kit</li>
+              </ul>
+            </div>
+          </div>
+          <img class="shot" src="../../assets/img/daladev/code.webp" width="600" height="480" alt="The same Pana interface built on&nbsp;core components in&nbsp;mobile and desktop modes" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">05</p>
+      <h2 class="t-h2">Use in&nbsp;products</h2>
+      <p class="text">The new system sped up&nbsp;work on&nbsp;Sandyq Prime, QR&nbsp;PAY and Chayla Group</p>
+      <ul class="bullets">
+        <li>Pana uses the system for new screens</li>
+        <li>Taza and Minmin were the first test products</li>
+      </ul>
+      <div class="box"><p>Today developers and designers don’t build interfaces from scratch&nbsp;— they use ready-made components. This saves 90% of&nbsp;the time on&nbsp;routine tasks</p></div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">06</p>
+      <h2 class="t-h2">Takeaways</h2>
+      <ul class="bullets">
+        <li>DalaDev Core cut development time</li>
+        <li>Design became consistent across all products</li>
+        <li>The library file is&nbsp;kept up&nbsp;to&nbsp;date and maintained</li>
+        <li>Adopting the design system gave the team flexibility and predictability</li>
+      </ul>
+      <blockquote class="quote t-quote">“You can’t create a&nbsp;design system, you can only keep building&nbsp;it” Viktor Teplov (OZON)</blockquote>
+      <p class="text">I&nbsp;keep exploring new approaches: I&nbsp;read the Design Systems chat on&nbsp;Telegram and follow Figma updates and conferences</p>
+    </section>
+  </div>
+</main>
+
+<div class="wrap">
+<footer class="footer">
+  <nav class="footer-projects" aria-label="Projects">
+    <div class="footer-projects__group">
+      <h2 class="t-h2">BAZAR</h2>
+      <div class="chips">
+        <a class="chip" href="../cases/redesign.html">Full redesign</a>
+        <a class="chip" href="../cases/design-system.html">New design system</a>
+        <a class="chip" href="../cases/redpolitika.html">Editorial guidelines</a>
+        <a class="chip" href="../cases/ai.html">AI in&nbsp;the&nbsp;team</a>
+      </div>
+    </div>
+    <div class="footer-projects__group">
+      <h2 class="t-h2">Other projects</h2>
+      <div class="chips">
+        <a class="chip" href="../cases/sandyq.html">Sandyq Prime</a>
+        <span class="chip chip--current" aria-current="page">DalaDev Core</span>
+        <a class="chip" href="../cases/chayla.html">Chayla App</a>
+        <a class="chip" href="../cases/pana.html">Pana</a>
+        <a class="chip" href="../cases/taza.html">Taza</a>
+      </div>
+    </div>
+  </nav>
+  <div class="contacts">
+    <ul class="contacts__list">
+      <li><a class="contact" href="https://t.me/worldofsea" target="_blank" rel="noopener" data-goatcounter-click="contact-telegram"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.70231 9.78639C6.72318 7.91862 9.41093 6.7114 10.7656 6.11918C14.5929 4.43363 15.3885 4.13752 15.9045 4.11475C16.012 4.11475 16.2701 4.13752 16.4421 4.27419C16.5711 4.38808 16.6141 4.54752 16.6356 4.66141C16.6571 4.7753 16.6786 5.02585 16.6571 5.23085C16.4421 7.5314 15.5605 13.1575 15.0875 15.7314C14.8939 16.8247 14.5069 17.1891 14.1414 17.2347C13.3458 17.303 12.7222 16.6652 11.9482 16.1414C10.7441 15.2986 10.056 14.7747 8.87338 13.9547C7.51876 12.998 8.40034 12.4742 9.17441 11.6314C9.36793 11.4036 12.9158 8.00973 12.9803 7.69084C12.9803 7.64529 13.0018 7.50862 12.9158 7.44029C12.8298 7.37195 12.7222 7.39473 12.6362 7.41751C12.5072 7.44029 10.572 8.80695 6.80919 11.4947C6.25014 11.9047 5.75559 12.0869 5.30405 12.0869C4.8095 12.0869 3.86341 11.7908 3.15385 11.5403C2.29377 11.2442 1.6057 11.0847 1.67021 10.5836C1.71321 10.3331 2.05725 10.0597 2.70231 9.78639Z" stroke="currentColor" stroke-width="1.5"/></svg></span><span><span class="contact__label">Telegram</span><span class="contact__value">@worldofsea</span></span></a></li>
+      <li><a class="contact" href="mailto:tzueva.work@gmail.com" data-goatcounter-click="contact-email"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M11.8984 3.0166C13.6484 3.04405 14.7538 3.04643 15.7012 3.48438C16.7101 3.95094 17.5993 4.85495 18.0498 5.87109C18.4723 6.82439 18.458 7.89363 18.458 9.58301C18.458 10.8445 18.459 11.8504 18.3711 12.6641C18.2812 13.4959 18.0923 14.196 17.6729 14.832C17.3395 15.3373 16.8651 15.8158 16.3633 16.1543C15.7301 16.5813 15.0261 16.7767 14.1865 16.875C13.364 16.9713 12.3431 16.9809 11.0605 16.9941C10.6924 16.9979 10.3351 17 9.99902 17C9.66311 17 9.30637 16.9979 8.93848 16.9941C7.65614 16.9809 6.63499 16.9712 5.8125 16.875C4.97289 16.7767 4.26798 16.5813 3.63477 16.1543C3.1331 15.8159 2.65942 15.3372 2.32617 14.832C1.90666 14.1959 1.71785 13.4959 1.62793 12.6641C1.54 11.8504 1.54102 10.8445 1.54102 9.58301C1.54101 7.89371 1.52578 6.82435 1.94824 5.87109C2.39884 4.85482 3.28877 3.95086 4.29785 3.48438C5.2453 3.04648 6.35038 3.04406 8.10059 3.0166C8.76401 3.00619 9.4132 3 9.99902 3C10.5849 3 11.2349 3.00619 11.8984 3.0166ZM12.9414 8.91602C11.8606 9.5284 10.9604 9.91595 9.99902 9.91602C9.03783 9.91593 8.13823 9.52826 7.05762 8.91602L3.22266 6.74316C3.05343 7.29391 3.04102 8.02138 3.04102 9.58301C3.04102 10.8769 3.04192 11.7883 3.11914 12.5029C3.19442 13.1993 3.33684 13.64 3.57812 14.0059C3.80253 14.3461 4.13576 14.6832 4.47363 14.9111C4.83542 15.1551 5.27878 15.3019 5.98633 15.3848C6.71111 15.4696 7.63872 15.4806 8.95312 15.4941C9.31717 15.4979 9.66917 15.5 9.99902 15.5C10.3289 15.5 10.6809 15.4979 11.0449 15.4941C12.3593 15.4806 13.2869 15.4696 14.0117 15.3848C14.7192 15.3019 15.1627 15.155 15.5244 14.9111C15.8623 14.6832 16.1965 14.3461 16.4209 14.0059C16.6621 13.64 16.8046 13.1992 16.8799 12.5029C16.9571 11.7884 16.958 10.8769 16.958 9.58301C16.958 8.02126 16.9447 7.29392 16.7754 6.74316L12.9414 8.91602ZM8.12402 4.5166C6.23382 4.54626 5.51766 4.57321 4.92773 4.8457C4.60743 4.99377 4.29968 5.21476 4.03125 5.47754L7.79688 7.61133C8.83934 8.20196 9.45003 8.41593 9.99902 8.41602C10.5481 8.41595 11.1594 8.20215 12.2021 7.61133L15.9668 5.47754C15.6985 5.21493 15.3914 4.99373 15.0713 4.8457C14.4813 4.57301 13.7647 4.54627 11.874 4.5166C11.2155 4.50627 10.5745 4.5 9.99902 4.5C9.42352 4.5 8.78254 4.50627 8.12402 4.5166Z" fill="currentColor"/></svg></span><span><span class="contact__label">Email</span><span class="contact__value">tzueva.work@gmail.com</span></span></a></li>
+      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.08735 8.78442L6.28772 6.58407C6.73656 6.13522 6.89188 5.47202 6.71034 4.86377C6.56839 4.38814 6.40846 3.81637 6.30215 3.32743C6.20383 2.87522 5.80701 2.5 5.34424 2.5H4.08735C3.16181 2.5 2.40174 3.2532 2.50326 4.17317C3.27505 11.1663 8.82782 16.7191 15.821 17.4909C16.7409 17.5924 17.4942 16.8323 17.4942 15.9068V14.6499C17.4942 14.1872 17.1174 13.8075 16.6621 13.7247C16.1598 13.6333 15.6284 13.4837 15.1838 13.3419C14.5451 13.1382 13.8351 13.2814 13.3611 13.7554L11.2097 15.9068" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="contact__label">Phone</span><span class="contact__value">+7&nbsp;(905)&nbsp;117-39-76</span></span></a></li>
+    </ul>
+    <p class="contacts__copy">Tanya Zueva · 2026</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

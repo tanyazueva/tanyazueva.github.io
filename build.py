@@ -2,6 +2,10 @@
 """Сборка сайта: берёт страницы из src/, подставляет общие куски
 (<!--HEAD title|description|path-->, <!--HEADER-->, <!--FOOTER slug-->) и пишет готовый HTML в корень.
 
+Языки: русские страницы — src/*.html и src/cases/*.html, английские — те же пути в src/en/.
+В английских страницах {{P}}assets/… ведёт к общим картинкам/CSS/JS в корне,
+а {{P}}index.html и {{P}}cases/… — к английским страницам внутри /en/.
+
 Запуск:  python3 build.py
 """
 from pathlib import Path
@@ -13,35 +17,63 @@ SRC = ROOT / "src"
 SITE_URL = "https://tanyazueva.github.io"  # после покупки домена поменять на https://tanyazueva.com
 
 CASES = [
-    # slug, название в чипсе, группа
-    ("redesign", "Полный редизайн", "bazar"),
-    ("design-system", "Новая дизайн-система", "bazar"),
-    ("redpolitika", "Редполитика", "bazar"),
-    ("ai", "ИИ в&nbsp;команде", "bazar"),
-    ("sandyq", "Sandyq Prime", "other"),
-    ("daladev", "DalaDev Core", "other"),
-    ("chayla", "Chayla App", "other"),
-    ("pana", "Pana", "other"),
-    ("taza", "Taza", "other"),
+    # slug, название в чипсе (ru, en), группа
+    ("redesign", "Полный редизайн", "Full redesign", "bazar"),
+    ("design-system", "Новая дизайн-система", "New design system", "bazar"),
+    ("redpolitika", "Редполитика", "Editorial guidelines", "bazar"),
+    ("ai", "ИИ в&nbsp;команде", "AI in&nbsp;the&nbsp;team", "bazar"),
+    ("sandyq", "Sandyq Prime", "Sandyq Prime", "other"),
+    ("daladev", "DalaDev Core", "DalaDev Core", "other"),
+    ("chayla", "Chayla App", "Chayla App", "other"),
+    ("pana", "Pana", "Pana", "other"),
+    ("taza", "Taza", "Taza", "other"),
 ]
+
+# Общие подписи шапки, подвала и head на двух языках
+T = {
+    "ru": {
+        "name": "Таня Зуева", "locale": "ru_RU",
+        "nav": "Разделы", "projects": "Проекты", "about": "Обо мне", "lang": "Язык",
+        "bazar": "БАЗАР", "other": "Другие проекты",
+        "mail": "Почта", "phone": "Телефон",
+    },
+    "en": {
+        "name": "Tanya Zueva", "locale": "en_US",
+        "nav": "Sections", "projects": "Projects", "about": "About", "lang": "Language",
+        "bazar": "BAZAR", "other": "Other projects",
+        "mail": "Email", "phone": "Phone",
+    },
+}
 
 ICON_TG = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.70231 9.78639C6.72318 7.91862 9.41093 6.7114 10.7656 6.11918C14.5929 4.43363 15.3885 4.13752 15.9045 4.11475C16.012 4.11475 16.2701 4.13752 16.4421 4.27419C16.5711 4.38808 16.6141 4.54752 16.6356 4.66141C16.6571 4.7753 16.6786 5.02585 16.6571 5.23085C16.4421 7.5314 15.5605 13.1575 15.0875 15.7314C14.8939 16.8247 14.5069 17.1891 14.1414 17.2347C13.3458 17.303 12.7222 16.6652 11.9482 16.1414C10.7441 15.2986 10.056 14.7747 8.87338 13.9547C7.51876 12.998 8.40034 12.4742 9.17441 11.6314C9.36793 11.4036 12.9158 8.00973 12.9803 7.69084C12.9803 7.64529 13.0018 7.50862 12.9158 7.44029C12.8298 7.37195 12.7222 7.39473 12.6362 7.41751C12.5072 7.44029 10.572 8.80695 6.80919 11.4947C6.25014 11.9047 5.75559 12.0869 5.30405 12.0869C4.8095 12.0869 3.86341 11.7908 3.15385 11.5403C2.29377 11.2442 1.6057 11.0847 1.67021 10.5836C1.71321 10.3331 2.05725 10.0597 2.70231 9.78639Z" stroke="currentColor" stroke-width="1.5"/></svg>'
 ICON_MAIL = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M11.8984 3.0166C13.6484 3.04405 14.7538 3.04643 15.7012 3.48438C16.7101 3.95094 17.5993 4.85495 18.0498 5.87109C18.4723 6.82439 18.458 7.89363 18.458 9.58301C18.458 10.8445 18.459 11.8504 18.3711 12.6641C18.2812 13.4959 18.0923 14.196 17.6729 14.832C17.3395 15.3373 16.8651 15.8158 16.3633 16.1543C15.7301 16.5813 15.0261 16.7767 14.1865 16.875C13.364 16.9713 12.3431 16.9809 11.0605 16.9941C10.6924 16.9979 10.3351 17 9.99902 17C9.66311 17 9.30637 16.9979 8.93848 16.9941C7.65614 16.9809 6.63499 16.9712 5.8125 16.875C4.97289 16.7767 4.26798 16.5813 3.63477 16.1543C3.1331 15.8159 2.65942 15.3372 2.32617 14.832C1.90666 14.1959 1.71785 13.4959 1.62793 12.6641C1.54 11.8504 1.54102 10.8445 1.54102 9.58301C1.54101 7.89371 1.52578 6.82435 1.94824 5.87109C2.39884 4.85482 3.28877 3.95086 4.29785 3.48438C5.2453 3.04648 6.35038 3.04406 8.10059 3.0166C8.76401 3.00619 9.4132 3 9.99902 3C10.5849 3 11.2349 3.00619 11.8984 3.0166ZM12.9414 8.91602C11.8606 9.5284 10.9604 9.91595 9.99902 9.91602C9.03783 9.91593 8.13823 9.52826 7.05762 8.91602L3.22266 6.74316C3.05343 7.29391 3.04102 8.02138 3.04102 9.58301C3.04102 10.8769 3.04192 11.7883 3.11914 12.5029C3.19442 13.1993 3.33684 13.64 3.57812 14.0059C3.80253 14.3461 4.13576 14.6832 4.47363 14.9111C4.83542 15.1551 5.27878 15.3019 5.98633 15.3848C6.71111 15.4696 7.63872 15.4806 8.95312 15.4941C9.31717 15.4979 9.66917 15.5 9.99902 15.5C10.3289 15.5 10.6809 15.4979 11.0449 15.4941C12.3593 15.4806 13.2869 15.4696 14.0117 15.3848C14.7192 15.3019 15.1627 15.155 15.5244 14.9111C15.8623 14.6832 16.1965 14.3461 16.4209 14.0059C16.6621 13.64 16.8046 13.1992 16.8799 12.5029C16.9571 11.7884 16.958 10.8769 16.958 9.58301C16.958 8.02126 16.9447 7.29392 16.7754 6.74316L12.9414 8.91602ZM8.12402 4.5166C6.23382 4.54626 5.51766 4.57321 4.92773 4.8457C4.60743 4.99377 4.29968 5.21476 4.03125 5.47754L7.79688 7.61133C8.83934 8.20196 9.45003 8.41593 9.99902 8.41602C10.5481 8.41595 11.1594 8.20215 12.2021 7.61133L15.9668 5.47754C15.6985 5.21493 15.3914 4.99373 15.0713 4.8457C14.4813 4.57301 13.7647 4.54627 11.874 4.5166C11.2155 4.50627 10.5745 4.5 9.99902 4.5C9.42352 4.5 8.78254 4.50627 8.12402 4.5166Z" fill="currentColor"/></svg>'
 ICON_PHONE = '<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.08735 8.78442L6.28772 6.58407C6.73656 6.13522 6.89188 5.47202 6.71034 4.86377C6.56839 4.38814 6.40846 3.81637 6.30215 3.32743C6.20383 2.87522 5.80701 2.5 5.34424 2.5H4.08735C3.16181 2.5 2.40174 3.2532 2.50326 4.17317C3.27505 11.1663 8.82782 16.7191 15.821 17.4909C16.7409 17.5924 17.4942 16.8323 17.4942 15.9068V14.6499C17.4942 14.1872 17.1174 13.8075 16.6621 13.7247C16.1598 13.6333 15.6284 13.4837 15.1838 13.3419C14.5451 13.1382 13.8351 13.2814 13.3611 13.7554L11.2097 15.9068" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'
-FLAG_RU = '<svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fr"><rect width="20" height="20" rx="10"/></clipPath></defs><g clip-path="url(#fr)"><rect width="20" height="7" fill="#fff"/><rect y="6.67" width="20" height="6.67" fill="#0039A6"/><rect y="13.33" width="20" height="6.67" fill="#D52B1E"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></svg>'
-FLAG_EN = '<svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fe"><rect width="20" height="20" rx="10"/></clipPath></defs><g opacity=".55"><g clip-path="url(#fe)"><rect width="20" height="20" fill="#012169"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#fff" stroke-width="4"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#C8102E" stroke-width="1.33"/><path d="M10 0v20M0 10h20" stroke="#fff" stroke-width="6.67"/><path d="M10 0v20M0 10h20" stroke="#C8102E" stroke-width="4"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>'
+def flag_ru(active: bool) -> str:
+    return f'<svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fr"><rect width="20" height="20" rx="10"/></clipPath></defs><g{"" if active else ' opacity=".55"'}><g clip-path="url(#fr)"><rect width="20" height="7" fill="#fff"/><rect y="6.67" width="20" height="6.67" fill="#0039A6"/><rect y="13.33" width="20" height="6.67" fill="#D52B1E"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>'
 
 
-def head(title: str, description: str, path: str, prefix: str, image: str = "assets/img/og.png") -> str:
-    url = SITE_URL + "/" + path
+def flag_en(active: bool) -> str:
+    return f'<svg viewBox="0 0 20 20" aria-hidden="true"><defs><clipPath id="fe"><rect width="20" height="20" rx="10"/></clipPath></defs><g{"" if active else ' opacity=".55"'}><g clip-path="url(#fe)"><rect width="20" height="20" fill="#012169"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#fff" stroke-width="4"/><path d="M-1.67-1.67 21.67 21.67M21.67-1.67-1.67 21.67" stroke="#C8102E" stroke-width="1.33"/><path d="M10 0v20M0 10h20" stroke="#fff" stroke-width="6.67"/><path d="M10 0v20M0 10h20" stroke="#C8102E" stroke-width="4"/></g><circle cx="10" cy="10" r="9.5" fill="none" stroke="#fff"/></g></svg>'
+
+
+def head(title: str, description: str, path: str, lang: str, prefix: str, image: str = "assets/img/og.png") -> str:
+    """path — путь русской страницы ('' для главной, 'cases/x.html'); английская лежит в en/ + path."""
+    t = T[lang]
+    ru_url = SITE_URL + "/" + path
+    en_url = SITE_URL + "/en/" + path
+    url = en_url if lang == "en" else ru_url
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{url}">
+<link rel="alternate" hreflang="ru" href="{ru_url}">
+<link rel="alternate" hreflang="en" href="{en_url}">
+<link rel="alternate" hreflang="x-default" href="{ru_url}">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="Таня Зуева">
+<meta property="og:locale" content="{t["locale"]}">
+<meta property="og:locale:alternate" content="{T["en" if lang == "ru" else "ru"]["locale"]}">
+<meta property="og:site_name" content="{t["name"]}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{url}">
@@ -56,24 +88,39 @@ def head(title: str, description: str, path: str, prefix: str, image: str = "ass
 <link rel="stylesheet" href="{prefix}assets/css/site.css">""" + (f'\n<script src="{prefix}assets/js/lightbox.js" defer></script>' if path.startswith("cases/") else "")
 
 
-def header(prefix: str) -> str:
+def header(lang: str, path: str, prefix: str, pages: str) -> str:
+    """prefix — путь к корню сайта (assets, русские страницы), pages — к главной своего языка."""
+    t = T[lang]
+    page = path or "index.html"
+    ru_href = prefix + page
+    en_href = prefix + "en/" + page
+    if lang == "ru":
+        ru = f'<span class="lang__item lang__item--active" aria-current="true">{flag_ru(True)}RU</span>'
+        en = f'<a class="lang__item" href="{en_href}" hreflang="en" lang="en" title="English version">{flag_en(False)}EN</a>'
+    else:
+        ru = f'<a class="lang__item" href="{ru_href}" hreflang="ru" lang="ru" title="Русская версия">{flag_ru(False)}RU</a>'
+        en = f'<span class="lang__item lang__item--active" aria-current="true">{flag_en(True)}EN</span>'
     return f"""<header class="site-header">
-  <a class="site-header__name" href="{prefix}index.html">Таня Зуева</a>
-  <nav class="site-header__nav" aria-label="Разделы">
-    <a href="{prefix}index.html#projects">Проекты</a>
-    <a href="{prefix}index.html#about">Обо мне</a>
+  <a class="site-header__name" href="{pages}index.html">{t["name"]}</a>
+  <nav class="site-header__nav" aria-label="{t["nav"]}">
+    <a href="{pages}index.html#projects">{t["projects"]}</a>
+    <a href="{pages}index.html#about">{t["about"]}</a>
   </nav>
-  <div class="lang" role="group" aria-label="Язык">
-    <span class="lang__item lang__item--active" aria-current="true">{FLAG_RU}RU</span>
-    <span class="lang__item" aria-disabled="true" title="English version is coming soon">{FLAG_EN}EN</span>
+  <div class="lang" role="group" aria-label="{t["lang"]}">
+    {ru}
+    {en}
   </div>
 </header>"""
 
 
-def footer(current: str, prefix: str) -> str:
+def footer(current: str, lang: str, prefix: str) -> str:
+    """prefix — путь к главной своего языка (для чипсов кейсов)."""
+    t = T[lang]
+
     def chips(group: str) -> str:
         out = []
-        for slug, name, g in CASES:
+        for slug, name_ru, name_en, g in CASES:
+            name = name_en if lang == "en" else name_ru
             if g != group:
                 continue
             if slug == current:
@@ -85,15 +132,15 @@ def footer(current: str, prefix: str) -> str:
     projects = ""
     if current != "home":
         projects = f"""
-  <nav class="footer-projects" aria-label="Проекты">
+  <nav class="footer-projects" aria-label="{t["projects"]}">
     <div class="footer-projects__group">
-      <h2 class="t-h2">БАЗАР</h2>
+      <h2 class="t-h2">{t["bazar"]}</h2>
       <div class="chips">
         {chips("bazar")}
       </div>
     </div>
     <div class="footer-projects__group">
-      <h2 class="t-h2">Другие проекты</h2>
+      <h2 class="t-h2">{t["other"]}</h2>
       <div class="chips">
         {chips("other")}
       </div>
@@ -103,10 +150,10 @@ def footer(current: str, prefix: str) -> str:
   <div class="contacts">
     <ul class="contacts__list">
       <li><a class="contact" href="https://t.me/worldofsea" target="_blank" rel="noopener" data-goatcounter-click="contact-telegram"><span class="contact__icon">{ICON_TG}</span><span><span class="contact__label">Telegram</span><span class="contact__value">@worldofsea</span></span></a></li>
-      <li><a class="contact" href="mailto:tzueva.work@gmail.com" data-goatcounter-click="contact-email"><span class="contact__icon">{ICON_MAIL}</span><span><span class="contact__label">Почта</span><span class="contact__value">tzueva.work@gmail.com</span></span></a></li>
-      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon">{ICON_PHONE}</span><span><span class="contact__label">Телефон</span><span class="contact__value">+7&nbsp;(905)&nbsp;117-39-76</span></span></a></li>
+      <li><a class="contact" href="mailto:tzueva.work@gmail.com" data-goatcounter-click="contact-email"><span class="contact__icon">{ICON_MAIL}</span><span><span class="contact__label">{t["mail"]}</span><span class="contact__value">tzueva.work@gmail.com</span></span></a></li>
+      <li><a class="contact" href="tel:+79051173976" data-goatcounter-click="contact-phone"><span class="contact__icon">{ICON_PHONE}</span><span><span class="contact__label">{t["phone"]}</span><span class="contact__value">+7&nbsp;(905)&nbsp;117-39-76</span></span></a></li>
     </ul>
-    <p class="contacts__copy">Таня Зуева · 2026</p>
+    <p class="contacts__copy">{t["name"]} · 2026</p>
   </div>
 </footer>"""
 
@@ -116,16 +163,21 @@ def build() -> None:
     for src in pages:
         rel = src.relative_to(SRC)
         depth = len(rel.parts) - 1
-        prefix = "../" * depth
+        prefix = "../" * depth                      # к корню сайта: assets и русские страницы
+        lang = "en" if rel.parts[0] == "en" else "ru"
+        pages = "../" * (depth - 1) if lang == "en" else prefix   # к главной своего языка
         html = src.read_text(encoding="utf-8")
+        m = re.search(r"<!--HEAD .*?\|.*?\|(.*?)-->", html)
+        path = m.group(1) if m else ""
         html = re.sub(
             r"<!--HEAD (.*?)\|(.*?)\|(.*?)-->",
-            lambda m: head(m.group(1), m.group(2), m.group(3), prefix),
+            lambda m: head(m.group(1), m.group(2), m.group(3), lang, prefix),
             html,
         )
-        html = html.replace("<!--HEADER-->", header(prefix))
-        html = re.sub(r"<!--FOOTER (\S+)-->", lambda m: footer(m.group(1), prefix), html)
-        html = html.replace("{{P}}", prefix)
+        html = html.replace("<!--HEADER-->", header(lang, path, prefix, pages))
+        html = re.sub(r"<!--FOOTER (\S+)-->", lambda m: footer(m.group(1), lang, pages), html)
+        html = html.replace("{{P}}assets/", prefix + "assets/")
+        html = html.replace("{{P}}", pages)
         # метка версии для CSS/JS, чтобы после обновления браузер не брал старый файл из кэша
         def _ver(m):
             f = ROOT / ("assets/" + m.group(3))

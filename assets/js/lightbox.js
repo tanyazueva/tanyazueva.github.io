@@ -11,13 +11,18 @@
   });
   if (!imgs.length) return;
 
+  var en = document.documentElement.lang === 'en';
+  var L = en
+    ? { dialog: 'Enlarged image', close: 'Close', open: 'Open enlarged' }
+    : { dialog: 'Картинка крупно', close: 'Закрыть', open: 'Открыть крупно' };
+
   var dlg = document.createElement('dialog');
   dlg.className = 'modal lightbox';
-  dlg.setAttribute('aria-label', 'Картинка крупно');
+  dlg.setAttribute('aria-label', L.dialog);
   dlg.innerHTML =
     '<div class="modal__box">' +
       '<img class="lightbox__img" alt="">' +
-      '<button class="modal__close" type="button" aria-label="Закрыть">' +
+      '<button class="modal__close" type="button" aria-label="' + L.close + '">' +
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' +
       '</button>' +
     '</div>';
@@ -38,7 +43,7 @@
     img.classList.add('zoomable');
     img.setAttribute('tabindex', '0');
     img.setAttribute('role', 'button');
-    img.setAttribute('aria-label', (img.alt ? img.alt + '. ' : '') + 'Открыть крупно');
+    img.setAttribute('aria-label', (img.alt ? img.alt + '. ' : '') + L.open);
     img.addEventListener('click', function () { open(img); });
     img.addEventListener('keydown', function (e) {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(img); }
