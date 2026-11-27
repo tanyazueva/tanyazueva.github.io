@@ -14,7 +14,7 @@
 .collage__years  { left: 47px;  top: -3px;  width: 363px; }
 .collage__ds4    { left: 388px; top: 7px;   width: 336px; }
 .collage__claude { left: 422px; top: 100px; width: 340px; }
-.collage__item:hover { z-index: 5; }
+.collage__photo:hover, .collage__video:hover { z-index: 5; }  /* бейджи без наведения: они не ссылки */
 
 /* Сферы */
 .spheres { padding-bottom: 40px; }
