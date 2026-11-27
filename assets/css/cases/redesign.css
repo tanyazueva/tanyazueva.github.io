@@ -9,8 +9,8 @@
 .ba__handle svg { width: 20px; height: 20px; flex: none; }
 .ba:has(.ba__range:focus-visible) .ba__handle { outline: 2px solid var(--accent); outline-offset: 3px; }
 .ba__label { position: absolute; bottom: 24px; padding: 10px 20px; border-radius: var(--r-pill); font: 600 18px/25px var(--sans); pointer-events: none; }
-.ba__label--before { left: 24px; background: #141414; color: #fff; }
-.ba__label--after { right: 24px; background: #fff; color: #141414; }
+.ba__label--before { left: 24px; background: var(--accent); color: #fff; }
+.ba__label--after { right: 24px; background: var(--accent); color: #fff; }
 
 /* Карточки */
 .rd-main { gap: 40px; }
