@@ -40,10 +40,10 @@
 .feature__sticker--redpol   { left: -4px; top: -15px; width: 118px; }
 .feature__sticker--ai       { left: -5px; top: -11px; width: 119px; }
 .feature__note { position: absolute; max-width: none; pointer-events: none; }
-.feature__note--redesign { left: 47px;  top: 114px; width: 65px; }
-.feature__note--ds       { left: -13px; top: 114px; width: 120px; }
+.feature__note--redesign { left: 13px;  top: 114px; width: 125px; }
+.feature__note--ds       { left: -24px; top: 114px; width: 166px; }
 .feature__note--redpol   { left: 11px;  top: 118px; width: 96px; }
-.feature__note--ai       { left: -11px; top: 104px; width: 97px; }
+.feature__note--ai       { left: -11px; top: 104px; width: 98px; }
 
 .earlier {
   display: flex; align-items: center; gap: 40px;
@@ -139,3 +139,6 @@ html[lang="en"] .collage__ds4   { left: 376px; width: 378px; }
   html[lang="en"] .collage__years { width: 257px; }
   html[lang="en"] .collage__ds4   { left: 122px; width: 208px; }
 }
+/* английские подписи под стикерами БАЗАР — свои отступы (русские стали однострочными) */
+html[lang="en"] .feature__note--redesign { left: 47px; }
+html[lang="en"] .feature__note--ds       { left: -13px; }
